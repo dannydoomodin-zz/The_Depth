@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\RocketJump\Projects\Major Mayhem\Major Mayhem\MajorMayhemUnity\Assets\Scripts\InAppPurchases\InAppVendorWindowsPhone.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game\Cell.cs">
     <Files>
-      <File FileName="..\..\..\RocketJump\Projects\Major Mayhem\Major Mayhem\MajorMayhemUnity\Assets\Scripts\InAppPurchases\InAppVendorWindowsPhone.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Game\Cell.cs" Line="107" Column="82" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

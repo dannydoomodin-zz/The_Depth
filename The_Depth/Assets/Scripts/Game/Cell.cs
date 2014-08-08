@@ -104,17 +104,41 @@ public class Cell : MonoBehaviour {
 					else
 					{
 						Debug.Log("The cell door is locked shut! I need to somehow get out...");
-						Util.setDialogue("The cell door is locked shut! I need to somehow get out...");
+						Util.setDialogue("The cell door is locked shut! I could try force it open...");
 					}
 				}
-				else if(hit.transform.gameObject.name == "cell_key" 
-				        || hit.transform.gameObject.name == "cell_note1"
-				        || hit.transform.gameObject.name == "cell_note2"
+				else if(hit.transform.gameObject.name == "cell_key"
 				        || hit.transform.gameObject.name == "cell_note3"
 				        || hit.transform.gameObject.name == "cell_mirror")
 				{
 					hit.transform.SendMessage("AddToInventory");
 				}
+				else if( hit.transform.gameObject.name == "wall_mirror")
+				{
+					Util.setDialogue("Hmm... Someone needs to clean this dirty mirror...");
+				}
+				else if( hit.transform.gameObject.name == "skeleton")
+				{
+					if(InventoryManager.instance.FindById("cell_note1"))
+					{
+						Util.setDialogue("...");
+					}
+					else
+					{
+						Util.setDialogue("I need to get out or I'll end up like him...what's that beside him");
+					}
+				}
+				else if( hit.transform.gameObject.name == "cell_note1")
+				{
+					hit.transform.SendMessage("AddToInventory");
+					Util.setDialogue("I don't think he will be needing this....");
+				}
+				else if( hit.transform.gameObject.name == "cell_note2")
+				{
+					hit.transform.SendMessage("AddToInventory");
+					Util.setDialogue("there should be another note.... where is it?");
+				}
+
 			}
 		}
 		else if(Input.GetMouseButtonDown(1))
