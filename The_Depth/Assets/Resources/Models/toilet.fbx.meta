@@ -1,0 +1,127 @@
+fileFormatVersion: 2
+guid: da344cff96ad0224ab065d0f7409f733
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Camera
+    100002: cistern_Porcelin
+    100004: Comode_base_Porcelin
+    100006: Connector_Metal
+    100008: Flush_Handle_White_Plastic
+    100010: Lamp
+    100012: Lid_White_Plastic
+    100014: Pipe_to_bowl_Porcelin
+    100016: //RootNode
+    100018: Ubend_Porcelin
+    100020: Water_Connector_Metal
+    100022: Water_Connector_Metal_MeshPart0
+    100024: Water_Connector_Metal_MeshPart1
+    100026: Water_Connector_Metal_MeshPart2
+    400000: Camera
+    400002: cistern_Porcelin
+    400004: Comode_base_Porcelin
+    400006: Connector_Metal
+    400008: Flush_Handle_White_Plastic
+    400010: Lamp
+    400012: Lid_White_Plastic
+    400014: Pipe_to_bowl_Porcelin
+    400016: //RootNode
+    400018: Ubend_Porcelin
+    400020: Water_Connector_Metal
+    400022: Water_Connector_Metal_MeshPart0
+    400024: Water_Connector_Metal_MeshPart1
+    400026: Water_Connector_Metal_MeshPart2
+    2300000: cistern_Porcelin
+    2300002: Comode_base_Porcelin
+    2300004: Connector_Metal
+    2300006: Flush_Handle_White_Plastic
+    2300008: Lid_White_Plastic
+    2300010: Pipe_to_bowl_Porcelin
+    2300012: Ubend_Porcelin
+    2300014: Water_Connector_Metal_MeshPart0
+    2300016: Water_Connector_Metal_MeshPart1
+    2300018: Water_Connector_Metal_MeshPart2
+    3300000: cistern_Porcelin
+    3300002: Comode_base_Porcelin
+    3300004: Connector_Metal
+    3300006: Flush_Handle_White_Plastic
+    3300008: Lid_White_Plastic
+    3300010: Pipe_to_bowl_Porcelin
+    3300012: Ubend_Porcelin
+    3300014: Water_Connector_Metal_MeshPart0
+    3300016: Water_Connector_Metal_MeshPart1
+    3300018: Water_Connector_Metal_MeshPart2
+    4300000: Connector_Metal
+    4300002: Flush_Handle_White_Plastic
+    4300004: Water_Connector_Metal_MeshPart0
+    4300006: Water_Connector_Metal_MeshPart1
+    4300008: Water_Connector_Metal_MeshPart2
+    4300010: Ubend_Porcelin
+    4300012: Comode_base_Porcelin
+    4300014: Pipe_to_bowl_Porcelin
+    4300016: cistern_Porcelin
+    4300018: Lid_White_Plastic
+    6400000: cistern_Porcelin
+    6400002: Comode_base_Porcelin
+    6400004: Connector_Metal
+    6400006: Flush_Handle_White_Plastic
+    6400008: Lid_White_Plastic
+    6400010: Pipe_to_bowl_Porcelin
+    6400012: Ubend_Porcelin
+    6400014: Water_Connector_Metal_MeshPart0
+    6400016: Water_Connector_Metal_MeshPart1
+    6400018: Water_Connector_Metal_MeshPart2
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 

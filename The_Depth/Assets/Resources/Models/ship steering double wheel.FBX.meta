@@ -1,0 +1,79 @@
+fileFormatVersion: 2
+guid: 46dafb58d50a48e4582008f827beeb81
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Camera01
+    100002: double wheel
+    100004: double wheel_MeshPart0
+    100006: double wheel_MeshPart1
+    100008: helm
+    100010: //RootNode
+    400000: Camera01
+    400002: double wheel
+    400004: double wheel_MeshPart0
+    400006: double wheel_MeshPart1
+    400008: helm
+    400010: //RootNode
+    2300000: double wheel_MeshPart0
+    2300002: double wheel_MeshPart1
+    2300004: helm
+    3300000: double wheel_MeshPart0
+    3300002: double wheel_MeshPart1
+    3300004: helm
+    4300000: helm
+    4300002: double wheel_MeshPart0
+    4300004: double wheel_MeshPart1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 
