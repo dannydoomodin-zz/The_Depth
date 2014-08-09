@@ -104,7 +104,8 @@ public class Cell : MonoBehaviour {
 					else
 					{
 						Debug.Log("The cell door is locked shut! I need to somehow get out...");
-						Util.setDialogue("The cell door is locked shut! I could try force it open...");
+						Util.setDialogue("The cell door is locked shut! I could try force it open...", hit.transform.gameObject);
+						Util.ShowChooserDialogue();
 					}
 				}
 				else if(hit.transform.gameObject.name == "cell_key"
@@ -203,5 +204,13 @@ public class Cell : MonoBehaviour {
 
 	void LateUpdate () {
 		updateInputs();
+	}
+
+	public void ForceUnlock(GameObject obj)
+	{
+		if(obj.name == "cellDoor")
+		{
+			unlockWithHealth(obj.transform.gameObject);
+		}
 	}
 }

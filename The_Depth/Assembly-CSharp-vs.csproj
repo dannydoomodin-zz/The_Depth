@@ -183,6 +183,7 @@
      <Compile Include="Assets\Scripts\Game\cameraFollow.cs" />
      <Compile Include="Assets\Scripts\Game\debug.cs" />
      <Compile Include="Assets\Scripts\Game\itemClicked.cs" />
+     <Compile Include="Assets\Scripts\UI\ChooserDialogue.cs" />
      <Compile Include="Assets\Scripts\UI\DialogueControl.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenuManager.cs" />
      <Compile Include="Assets\Scripts\UI\TransitionManager.cs" />

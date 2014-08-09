@@ -4,6 +4,7 @@ using System.Collections;
 public class Util : MonoBehaviour {
 
 	public static bool clickedUI = false;
+	public static GameObject dialogueObj = null;
 
 	public static void setObjectActive(GameObject obj)
 	{
@@ -18,7 +19,7 @@ public class Util : MonoBehaviour {
 		} 
 	}
 
-	public static void setDialogue(string s)
+	public static void setDialogue(string s, GameObject obj = null)
 	{
 		GameObject dialogueBase = GameObject.Find("DialogueBase");
 		if(dialogueBase)
@@ -42,6 +43,8 @@ public class Util : MonoBehaviour {
 				label.text = s;
 				
 			}
+
+			dialogueObj = obj;
 		}
 	}
 
@@ -49,5 +52,28 @@ public class Util : MonoBehaviour {
 	{
 		setDialogue("");
 	}
-	
+
+	public static void HideChooserDialogue()
+	{
+		GameObject ChooserDialogue = GameObject.Find("ChooserDialogue");
+		if(ChooserDialogue)
+		{
+			for(int x = 0; x < ChooserDialogue.transform.childCount; x++) //set childs inactive
+			{
+				ChooserDialogue.transform.GetChild(x).gameObject.SetActive(false);
+			}
+		}
+	}
+
+	public static void ShowChooserDialogue()
+	{
+		GameObject ChooserDialogue = GameObject.Find("ChooserDialogue");
+		if(ChooserDialogue)
+		{
+			for(int x = 0; x < ChooserDialogue.transform.childCount; x++) //set childs inactive
+			{
+				ChooserDialogue.transform.GetChild(x).gameObject.SetActive(true);
+			}
+		}
+	}
 }
