@@ -25,6 +25,8 @@ Then we apply the smoothed values to the transform's position.
 	public float heightDamping = 2.0f;
 	public float rotationDamping = 3.0f;
 
+	public bool isDoorTransition = false;
+
 	void UpdateInput()
 	{	
 		if(Util.clickedUI)
@@ -60,7 +62,20 @@ Then we apply the smoothed values to the transform's position.
 		
 		var currentRotationAngle = transform.eulerAngles.y;
 		var currentHeight = transform.position.y;
-		
+
+		if(isDoorTransition)
+		{
+			if( Mathf.Abs( wantedHeight - currentHeight) < 1)
+			{
+				TransitionManager.instance.Fade(0.0f, 1);
+				isDoorTransition = false;
+			}
+			else
+			{
+				TransitionManager.instance.setAlpha(1.0f);
+			}
+		}
+
 		// Damp the rotation around the y-axis
 		currentRotationAngle = Mathf.LerpAngle (currentRotationAngle, wantedRotationAngle, rotationDamping * Time.deltaTime);
 

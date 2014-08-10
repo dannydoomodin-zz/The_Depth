@@ -26,6 +26,7 @@ public class DoorController : MonoBehaviour {
 			SceneManager.instance.HideAllScene(sceneEnum);
 			SceneManager.instance.DisplayScene(sceneEnum);
 			camScript.target = toPointer.transform;
+			camScript.isDoorTransition = true;
 		}
 	}
 }

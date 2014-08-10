@@ -58,6 +58,22 @@ public class TransitionManager : MonoBehaviour {
 	
 	public void HideAnimation (Transitions transition) {}
 
+	public void setAlpha(float fade)
+	{
+		if(fadeSprite)
+		{
+			UISprite spriteScript = fadeSprite.transform.GetComponent<UISprite>();
+
+			Color newColor = new Color(spriteScript.color.r, 
+						                           spriteScript.color.g, 
+						                           spriteScript.color.b, 
+			                         			   fade);
+			
+			spriteScript.color = newColor;
+		}
+		
+	}
+
 	//percentage 0-1
 	public void Fade(float fadeToPercentage, double seconds)
 	{
