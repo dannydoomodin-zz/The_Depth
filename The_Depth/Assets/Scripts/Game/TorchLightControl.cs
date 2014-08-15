@@ -27,6 +27,7 @@ public class TorchLightControl : MonoBehaviour {
 		if(isTorchOn)
 		{
 			Debug.Log("torching aiming...");
+			gameObject.light.enabled = true;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 			
@@ -35,6 +36,10 @@ public class TorchLightControl : MonoBehaviour {
 				Vector3 hitPoint = hit.point;
 				gameObject.transform.LookAt(hitPoint);
 			}
+		}
+		else
+		{
+			gameObject.light.enabled = false;
 		}
 	}
 }

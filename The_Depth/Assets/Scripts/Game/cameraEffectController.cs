@@ -9,10 +9,6 @@ public class cameraEffectController : MonoBehaviour {
 	public Shader shader;
 	public void Awake() 
 	{
-		if (shader)
-		{
-			transform.camera.SetReplacementShader(shader, null);
-		}
 	}
 
 	void Update()
