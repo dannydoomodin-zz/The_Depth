@@ -2,3 +2,6 @@ The_Depth/Library/
 Builds/
 bin/
 obj/
+The_Depth/*.sln
+The_Depth/*.unityproj
+The_Depth/*.csproj
