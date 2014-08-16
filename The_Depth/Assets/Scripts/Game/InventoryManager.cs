@@ -6,7 +6,9 @@ public class InventoryManager : MonoBehaviour {
 	private static InventoryManager s_Instance = null;
 
 	public ArrayList itemList;
-	
+
+	private GameObject[] itemUIObj = new GameObject[6];
+
 	public static InventoryManager instance
 	{
 		get
@@ -34,6 +36,33 @@ public class InventoryManager : MonoBehaviour {
 	public void AddItem(Item item)
 	{
 		itemList.Add(item);
+
+		//update item
+		UpdateInventoryUI();
+
+	}
+
+	public void UpdateInventoryUI()
+	{
+		//inventory ui hidden dont do anything
+		if(itemUIObj[0] && !itemUIObj[0].activeSelf)
+		{
+			return;
+		}
+
+		//check if we have gameobjects
+		for(int x = 0; x < 6 ; x++)
+		{
+			if(!itemUIObj[x])
+			{
+				itemUIObj[x] = GameObject.Find("Item" + x);
+			}
+			
+			if(itemUIObj[x])
+			{
+				itemUIObj[x].transform.FindChild("Label").GetComponent<UILabel>().text = getItemName(x);
+			}
+		}
 	}
 
 	public void AddItemByName(string room, string id)
@@ -43,6 +72,10 @@ public class InventoryManager : MonoBehaviour {
 
 	public string getItemName(int id)
 	{
+		if(itemList.Count <= id)
+		{
+			return "";
+		}
 		Item i = (Item)itemList[id];
 		return i.m_id;
 	}

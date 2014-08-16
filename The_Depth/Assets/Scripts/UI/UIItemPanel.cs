@@ -16,6 +16,7 @@ public class UIItemPanel : MonoBehaviour {
 		else
 		{
 			HUDitem.SetActive(true);
+			InventoryManager.instance.UpdateInventoryUI();
 		}
 
 		Util.clickedUI = true;
