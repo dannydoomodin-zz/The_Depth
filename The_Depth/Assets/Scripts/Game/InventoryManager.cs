@@ -9,6 +9,8 @@ public class InventoryManager : MonoBehaviour {
 
 	private GameObject[] itemUIObj = new GameObject[6];
 
+	private int currentPage = 0;
+
 	public static InventoryManager instance
 	{
 		get
@@ -42,6 +44,19 @@ public class InventoryManager : MonoBehaviour {
 
 	}
 
+	public int getCurrentPage()
+	{
+		return currentPage;
+	}
+
+	public void setCurrentPage(int value)
+	{
+		if(value >= 0)
+		{
+			currentPage = value;
+		}
+	}
+
 	public void UpdateInventoryUI()
 	{
 		//inventory ui hidden dont do anything
@@ -60,7 +75,7 @@ public class InventoryManager : MonoBehaviour {
 			
 			if(itemUIObj[x])
 			{
-				itemUIObj[x].transform.FindChild("Label").GetComponent<UILabel>().text = getItemName(x);
+				itemUIObj[x].transform.FindChild("Label").GetComponent<UILabel>().text = getItemName(x+(6*currentPage));
 			}
 		}
 	}

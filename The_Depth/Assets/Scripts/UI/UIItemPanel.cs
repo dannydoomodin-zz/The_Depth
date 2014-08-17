@@ -5,8 +5,6 @@ public class UIItemPanel : MonoBehaviour {
 
 	public GameObject HUDitem;
 
-	public string[] itemName;
-
 	// Use this for initialization
 	void OnClick () {
 		if(HUDitem.activeInHierarchy)
