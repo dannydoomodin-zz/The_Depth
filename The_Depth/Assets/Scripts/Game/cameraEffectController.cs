@@ -4,7 +4,7 @@ using System.Collections;
 [ExecuteInEditMode]
 public class cameraEffectController : MonoBehaviour {
 
-	private bool isUsingTDevice = false;
+	public bool isUsingTDevice = false;
 
 	public Shader shader;
 	public void Awake() 
@@ -18,13 +18,21 @@ public class cameraEffectController : MonoBehaviour {
 			if(isUsingTDevice)
 			{
 				isUsingTDevice = false;
-				transform.camera.SetReplacementShader(shader, null);
 			}
 			else
 			{
 				isUsingTDevice = true;
-				transform.camera.SetReplacementShader(null, null);
 			}
 		}
+			
+		if(isUsingTDevice)
+		{
+			transform.camera.SetReplacementShader(shader, null);
+		}
+		else
+		{
+			transform.camera.SetReplacementShader(null, null);
+		}
+
 	}
 }

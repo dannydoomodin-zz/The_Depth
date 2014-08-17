@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TorchLightControl : MonoBehaviour {
 
-	private bool isTorchOn = false;
+	public bool isTorchOn = false;
 
 	// Use this for initialization
 	void Start () {

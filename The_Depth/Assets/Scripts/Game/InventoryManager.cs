@@ -136,4 +136,66 @@ public class InventoryManager : MonoBehaviour {
 			}
 		}
 	}
+
+	public void UseItem(string itemId)
+	{
+		if(itemId == "flashLight")
+		{
+			bool isTorchOn = GameObject.Find("Main Camera").transform.FindChild("torchlight").GetComponent<TorchLightControl>().isTorchOn;
+
+			if(isTorchOn)
+			{
+				GameObject.Find("Main Camera").transform.FindChild("torchlight").GetComponent<TorchLightControl>().isTorchOn = false;
+			}
+			else
+			{
+				GameObject.Find("Main Camera").transform.FindChild("torchlight").GetComponent<TorchLightControl>().isTorchOn = true;
+			}
+		}
+		else if(itemId == "charcole")
+		{
+			
+		}
+		else if(itemId == "paper")
+		{
+			
+		}
+		else if(itemId == "knife1")
+		{
+			
+		}
+		else if(itemId == "TimeDevice")
+		{
+			bool isUsingTDevice = GameObject.Find("Main Camera").GetComponent<cameraEffectController>().isUsingTDevice;
+
+			if(isUsingTDevice)
+			{
+				GameObject.Find("Main Camera").GetComponent<cameraEffectController>().isUsingTDevice = false;
+			}
+			else
+			{
+				GameObject.Find("Main Camera").GetComponent<cameraEffectController>().isUsingTDevice = true;
+			}
+		}	
+		else if(itemId == "screwDriver")
+		{
+			
+		}
+		else if(itemId == "wrench1")
+		{
+			
+		}
+		else if(itemId == "bucket")
+		{
+			
+		}
+		else if(itemId == "cell_mirror")
+		{
+			
+		}
+		else if(itemId == "key")
+		{
+			
+		}
+	}
 }
