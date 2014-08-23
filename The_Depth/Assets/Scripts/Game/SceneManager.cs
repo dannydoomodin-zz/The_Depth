@@ -191,7 +191,8 @@ public class SceneManager : MonoBehaviour {
 	{
 		finishedLoading = false;
 		currentScene = scene;
-		Util.setObjectActive(sceneObjs[(int)currentScene]);
+		sceneObjs[(int)currentScene].SetActive(true);
+		//Util.setObjectActive(sceneObjs[(int)currentScene]);
 		finishedLoading = true;
 	}
 

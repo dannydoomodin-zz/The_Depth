@@ -6,6 +6,7 @@ public class DoorController : MonoBehaviour {
 	public bool locked = false;
 	public GameObject toRoom;
 	public GameObject toPointer;
+	private Color origAmbColour = new Color(0.2f,0.2f,0.2f);
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +28,15 @@ public class DoorController : MonoBehaviour {
 			SceneManager.instance.DisplayScene(sceneEnum);
 			camScript.target = toPointer.transform;
 			camScript.isDoorTransition = true;
+
+			if(sceneEnum == SceneManager.Scenes.DivingRoom || sceneEnum == SceneManager.Scenes.Airlock)
+			{
+				RenderSettings.ambientLight = new Color(0,0,0);
+			}
+			else
+			{
+				RenderSettings.ambientLight = origAmbColour;
+			}
 		}
 	}
 }

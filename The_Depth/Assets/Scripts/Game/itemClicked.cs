@@ -15,7 +15,7 @@ public class itemClicked : MonoBehaviour {
 
 	void AddToInventory()
 	{
-		if(gameObject.renderer)
+		/*if(gameObject.renderer)
 		{
 			gameObject.renderer.enabled = false;
 		}	
@@ -29,7 +29,8 @@ public class itemClicked : MonoBehaviour {
 				}
 			}
 		}
-		gameObject.collider.enabled = false;
+		gameObject.collider.enabled = false;*/
+		gameObject.SetActive(false);
 		Item i = new Item(gameObject.name, gameObject);
 		InventoryManager.instance.AddItem(i);
 	}

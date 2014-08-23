@@ -25,7 +25,7 @@ public class Airlock : MonoBehaviour {
 			{
 				Debug.Log(hit.transform.gameObject.name);
 			
-				if(hit.transform.gameObject.name == "flashLight")
+				if(hit.transform.gameObject.name == "TimeDevice")
 				{
 					hit.transform.SendMessage("AddToInventory");
 				}
