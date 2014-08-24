@@ -6,6 +6,8 @@ public class Util : MonoBehaviour {
 	public static bool clickedUI = false;
 	public static GameObject dialogueObj = null;
 
+	private static ArrayList multipleDialogues = null;
+
 	public static void setObjectActive(GameObject obj)
 	{
 		if(!obj.activeSelf)
@@ -19,7 +21,36 @@ public class Util : MonoBehaviour {
 		} 
 	}
 
+	public static void nextDialogue()
+	{
+		if(multipleDialogues.Count != 0)
+		{
+			setDialogueInt((string)multipleDialogues[0]);
+			multipleDialogues.RemoveAt(0);
+		}
+		else
+		{
+			Util.HideDialogue();
+			Util.HideChooserDialogue();
+		}
+
+	}
+
 	public static void setDialogue(string s, GameObject obj = null)
+	{
+		ArrayList list = new ArrayList();
+		list.Add(s);
+		setDialogue(list, obj);
+		dialogueObj = obj;
+	}
+
+	public static void setDialogue(ArrayList s, GameObject obj = null)
+	{
+		multipleDialogues = s;
+		nextDialogue();
+	}
+
+	private static void setDialogueInt(string s, GameObject obj = null)
 	{
 		GameObject dialogueBase = GameObject.Find("DialogueBase");
 		if(dialogueBase)
@@ -43,8 +74,6 @@ public class Util : MonoBehaviour {
 				label.text = s;
 				
 			}
-
-			dialogueObj = obj;
 		}
 	}
 

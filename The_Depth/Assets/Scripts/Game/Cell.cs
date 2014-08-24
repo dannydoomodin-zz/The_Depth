@@ -51,6 +51,12 @@ public class Cell : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		camScript = GameObject.Find ("Main Camera").transform.GetComponent<cameraFollow>();
+		ArrayList list = new ArrayList();
+		list.Add("Uhhh.....where am I?");
+		list.Add("How did I get here?");
+		list.Add("I remember the ship sinking.... the screaming...");
+		list.Add("I need to get out of here....");
+		Util.setDialogue(list);
 	}
 
 	void updateInputs()

@@ -16,7 +16,6 @@ public class DialogueControl : MonoBehaviour {
 	void OnClick ()
 	{
 		Util.clickedUI = true;
-		Util.HideDialogue();
-		Util.HideChooserDialogue();
+		Util.nextDialogue();
 	}
 }
