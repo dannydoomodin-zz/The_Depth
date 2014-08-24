@@ -11,6 +11,8 @@ public class Cell : MonoBehaviour {
 	private float deltaX;
 	private const float doorOpenPosX = -1.5f;
 
+	private float doorAnimationDelay = 1.0f;
+
 	void unlockWithHealth(GameObject unlockObj)
 	{
 		PlayerProfile.instance.RemoveHealth(10);
@@ -21,7 +23,7 @@ public class Cell : MonoBehaviour {
 	void setDoorUnlockAnimation()
 	{
 
-		deltaX = (doorObject.transform.localPosition.x - doorOpenPosX)/1;
+		deltaX = (doorObject.transform.localPosition.x - doorOpenPosX)/4;
 		animateDoor = true;
 		
 		doorObject.collider.enabled = false;
@@ -41,6 +43,9 @@ public class Cell : MonoBehaviour {
 			//set animation info
 			doorObject = unlockObj;
 			setDoorUnlockAnimation();
+
+			//set door sound
+			unlockObj.audio.Play();
 
 			cameraFollow camFollowScript = GameObject.Find ("Main Camera").GetComponent<cameraFollow>();
 			camPointer_script pointerScript = camFollowScript.target.GetComponent<camPointer_script>();
@@ -193,8 +198,15 @@ public class Cell : MonoBehaviour {
 		{
 			if(doorObject.transform.localPosition.x > doorOpenPosX)
 			{
+				if(doorAnimationDelay < 0)
+				{
 				doorObject.transform.position = new Vector3(doorObject.transform.position.x - (deltaX * Time.deltaTime)
 				                                            , doorObject.transform.position.y, doorObject.transform.position.z);
+				}
+				else
+				{
+					doorAnimationDelay -= Time.deltaTime;
+				}
 			}
 			else
 			{
