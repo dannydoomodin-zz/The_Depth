@@ -15,8 +15,7 @@ public class UseItem : MonoBehaviour {
 
 	void OnClick()
 	{
-		string objId = gameObject.transform.FindChild("Label").GetComponent<UILabel>().text;
-		Debug.Log("using: " + objId);
-		InventoryManager.instance.UseItem(objId);
+		Util.ShowChooserDialogue(Util.chooserDialogueType.ItemAction);
+		InventoryManager.instance.currentChooserItemId = gameObject.transform.FindChild("Label").GetComponent<UILabel>().text;
 	}
 }

@@ -65,14 +65,24 @@ public class Util : MonoBehaviour {
 		}
 	}
 
-	public static void ShowChooserDialogue()
+	public enum chooserDialogueType
+	{
+		YesNo,
+		ItemAction,
+	};
+
+	public static void ShowChooserDialogue(chooserDialogueType type = chooserDialogueType.YesNo)
 	{
 		GameObject ChooserDialogue = GameObject.Find("ChooserDialogue");
 		if(ChooserDialogue)
 		{
-			for(int x = 0; x < ChooserDialogue.transform.childCount; x++) //set childs inactive
+			if(type == chooserDialogueType.YesNo)
 			{
-				ChooserDialogue.transform.GetChild(x).gameObject.SetActive(true);
+				ChooserDialogue.transform.GetChild(0).gameObject.SetActive(true);
+			}
+			else
+			{
+				ChooserDialogue.transform.GetChild(1).gameObject.SetActive(true);
 			}
 		}
 	}

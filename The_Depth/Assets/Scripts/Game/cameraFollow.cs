@@ -42,7 +42,7 @@ Then we apply the smoothed values to the transform's position.
 			
 			if(Physics.Raycast(ray, out hit, 100))
 			{
-				Debug.Log(hit.transform.gameObject.name);
+				//Debug.Log(hit.transform.gameObject.name);
 				if(hit.transform.gameObject.name == "ActualDoor")
 				{
 					hit.transform.gameObject.SendMessage("Go");

@@ -11,6 +11,12 @@ public class InventoryManager : MonoBehaviour {
 
 	private int currentPage = 0;
 
+	public string currentChooserItemId = null;
+
+	public string itemToCombineWith = null;
+
+	public string itemToCombineWith2 = null;
+
 	public static InventoryManager instance
 	{
 		get
@@ -109,9 +115,34 @@ public class InventoryManager : MonoBehaviour {
 		return null;
 	}
 
-	public bool Combine(Item item1, Item item2)
+	public bool CombineCurrentSelection()
 	{
-		return true;
+		bool success = false;
+
+		if((itemToCombineWith2 == "knife1" && itemToCombineWith == "cork")  ||
+		   (itemToCombineWith2 == "cork" && itemToCombineWith == "knife1"))
+		{
+			//add new item
+			success = true;
+		}
+		else if((itemToCombineWith2 == "corkPieces" && itemToCombineWith == "brokenBucket")  ||
+		        (itemToCombineWith2 == "brokenBucket" && itemToCombineWith == "corkPieces"))
+		{
+			//add new item
+			success = true;
+		}
+
+		itemToCombineWith2 = "";
+		itemToCombineWith = "";
+
+		if(success)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	public int GetNumberOfItems()
@@ -185,7 +216,7 @@ public class InventoryManager : MonoBehaviour {
 		{
 			
 		}
-		else if(itemId == "bucket")
+		else if(itemId == "brokenBucket")
 		{
 			
 		}

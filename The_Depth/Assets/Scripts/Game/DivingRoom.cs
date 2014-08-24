@@ -73,7 +73,8 @@ public class DivingRoom : MonoBehaviour {
 						anim.Play ("Open");
 					}
 				}
-				else if(hit.transform.gameObject.name.Contains("flashLight"))
+
+				if(hit.transform.gameObject.name.Contains("flashLight"))
 				{
 					hit.transform.SendMessage("AddToInventory");
 					Util.setDialogue("guess that light finally gave out... now I can't see anything");

@@ -30,7 +30,11 @@ public class Store : MonoBehaviour {
 			{
 				Debug.Log(hit.transform.gameObject.name);
 
-				if(hit.transform.gameObject.name == "bucket")
+				if(hit.transform.gameObject.name == "brokenBucket")
+				{
+					hit.transform.SendMessage("AddToInventory");
+				}
+				else if(hit.transform.gameObject.name == "cork")
 				{
 					hit.transform.SendMessage("AddToInventory");
 				}
