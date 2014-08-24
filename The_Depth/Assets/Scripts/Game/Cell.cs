@@ -13,6 +13,9 @@ public class Cell : MonoBehaviour {
 
 	private float doorAnimationDelay = 1.0f;
 
+	private GameObject waterDrip;
+	private float waterDripAudioSync = 1.0f;
+
 	void unlockWithHealth(GameObject unlockObj)
 	{
 		PlayerProfile.instance.RemoveHealth(10);
@@ -56,6 +59,9 @@ public class Cell : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		camScript = GameObject.Find ("Main Camera").transform.GetComponent<cameraFollow>();
+
+		waterDrip = transform.FindChild("water").gameObject;
+
 		ArrayList list = new ArrayList();
 		list.Add("Uhhh.....where am I?");
 		list.Add("How did I get here?");
@@ -218,6 +224,16 @@ public class Cell : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		updateAnimation();
+
+		if(waterDripAudioSync <= 0)
+		{
+			waterDrip.audio.Play ();
+			waterDripAudioSync = 1.0f;
+		}
+		else
+		{
+			waterDripAudioSync -= Time.deltaTime;
+		}
 	}
 
 	void LateUpdate () {
