@@ -20,6 +20,8 @@ public class camPointer_script : MonoBehaviour {
 
 	private cameraFollow camScript;
 
+	public GameObject colliderObj;
+
 	// Use this for initialization
 	void Start () {
 		camScript = GameObject.Find ("Main Camera").transform.GetComponent<cameraFollow>();
@@ -118,6 +120,12 @@ public class camPointer_script : MonoBehaviour {
 		if(script.Down && !script.downBlocked)
 		{
 			btnDown.gameObject.SetActive(true);
+		}
+
+		//reenable collider objs
+		if(colliderObj)
+		{
+			colliderObj.collider.enabled = true;
 		}
 	}
 }
