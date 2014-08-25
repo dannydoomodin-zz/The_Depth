@@ -63,14 +63,25 @@ public class DivingRoom : MonoBehaviour {
 				if(hit.transform.gameObject.name.Contains("Locker"))
 				{
 					Animation anim = hit.transform.gameObject.animation;
+					AudioSource audio = hit.transform.gameObject.audio;
 					if(!anim)
 					{
 						anim = hit.transform.parent.animation;
 					}
 
+					if(!audio)
+					{
+						audio = hit.transform.parent.audio;
+					}
+
 					if(anim)
 					{
 						anim.Play ("Open");
+					}
+
+					if(audio)
+					{
+						audio.Play();
 					}
 				}
 
