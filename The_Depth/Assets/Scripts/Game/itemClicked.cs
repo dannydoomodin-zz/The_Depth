@@ -15,22 +15,38 @@ public class itemClicked : MonoBehaviour {
 
 	void AddToInventory()
 	{
-		/*if(gameObject.renderer)
+		//play item collection audio if there is one
+		if(gameObject.audio)
+		{
+			gameObject.audio.Play();
+		}
+
+		//disables all rendering and light
+		if(gameObject.renderer)
 		{
 			gameObject.renderer.enabled = false;
-		}	
-		else
-		{
-			for(int count = 0; count < gameObject.transform.childCount; count++)
-			{
-				if(gameObject.transform.GetChild(count).renderer)
-				{
-					gameObject.transform.GetChild(count).renderer.enabled = false;
-				}
-			}
 		}
-		gameObject.collider.enabled = false;*/
-		gameObject.SetActive(false);
+		if(gameObject.light)
+		{
+			gameObject.light.enabled = false;
+		}
+
+		for(int x = 0; x < transform.childCount; x++)
+		{
+
+			if(gameObject.transform.GetChild(x).renderer)
+			{
+				gameObject.transform.GetChild(x).renderer.enabled = false;
+			}
+			if(gameObject.transform.GetChild(x).light)
+			{
+				gameObject.transform.GetChild(x).light.enabled = false;
+			}
+
+		}
+		gameObject.collider.enabled = false;
+
+		//add to inventory
 		Item i = new Item(gameObject.name, gameObject);
 		InventoryManager.instance.AddItem(i);
 	}
