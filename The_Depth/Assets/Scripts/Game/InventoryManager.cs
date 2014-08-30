@@ -41,6 +41,20 @@ public class InventoryManager : MonoBehaviour {
 		itemList.Remove(item);
 	}
 
+	public void RemoveItemString(string itemId)
+	{
+		foreach(Item i in itemList)
+		{
+			if(i.m_id == itemId)
+			{
+				itemList.Remove(i);
+				return;
+			}
+		}
+
+		Debug.Log("cannot find item");
+	}
+
 	public void AddItem(Item item)
 	{
 		itemList.Add(item);
@@ -123,12 +137,19 @@ public class InventoryManager : MonoBehaviour {
 		   (itemToCombineWith2 == "cork" && itemToCombineWith == "knife1"))
 		{
 			//add new item
+			var item = new Item("corkPieces",null);
+			//RemoveItemString("knife1");
+			RemoveItemString("cork");
+			AddItem(item);
 			success = true;
 		}
 		else if((itemToCombineWith2 == "corkPieces" && itemToCombineWith == "brokenBucket")  ||
 		        (itemToCombineWith2 == "brokenBucket" && itemToCombineWith == "corkPieces"))
 		{
-			//add new item
+			var item = new Item("Bucket",null);
+			RemoveItemString("corkPieces");
+			RemoveItemString("brokenBucket");
+			AddItem(item);
 			success = true;
 		}
 
