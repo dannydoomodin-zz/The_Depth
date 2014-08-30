@@ -32,7 +32,7 @@ public class Cell : MonoBehaviour {
 		doorObject.collider.enabled = false;
 	}
 
-	void unlock(GameObject unlockObj)
+	public void unlock(GameObject unlockObj)
 	{
 		string objName = unlockObj.name;
 		if(objName == "cellDoor")
@@ -114,16 +114,9 @@ public class Cell : MonoBehaviour {
 				
 				if(hit.transform.gameObject.name == "cellDoor")
 				{
-					if(InventoryManager.instance.FindById("cell_key"))
-					{
-						unlock(hit.transform.gameObject);
-					}
-					else
-					{
 						Debug.Log("The cell door is locked shut! I need to somehow get out...");
-						Util.setDialogue("The cell door is locked shut! I could try force it open...", hit.transform.gameObject);
+						Util.setDialogue("The cell door is locked shut! I could find the key, or try force it open...", hit.transform.gameObject);
 						Util.ShowChooserDialogue();
-					}
 				}
 				else if(hit.transform.gameObject.name == "cell_key"
 				        || hit.transform.gameObject.name == "cell_note3"

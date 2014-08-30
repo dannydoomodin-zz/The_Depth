@@ -17,6 +17,8 @@ public class InventoryManager : MonoBehaviour {
 
 	public string itemToCombineWith2 = null;
 
+	private bool isTryUsingCurrentItem = false;
+
 	public static InventoryManager instance
 	{
 		get
@@ -39,6 +41,7 @@ public class InventoryManager : MonoBehaviour {
 	public void RemoveItem(Item item)
 	{
 		itemList.Remove(item);
+		UpdateInventoryUI();
 	}
 
 	public void RemoveItemString(string itemId)
@@ -48,6 +51,7 @@ public class InventoryManager : MonoBehaviour {
 			if(i.m_id == itemId)
 			{
 				itemList.Remove(i);
+				UpdateInventoryUI();
 				return;
 			}
 		}
@@ -187,6 +191,28 @@ public class InventoryManager : MonoBehaviour {
 				Debug.Log(x + ". " + ((Item)itemList[x]).m_id);
 			}
 		}
+
+		if(isTryUsingCurrentItem)
+		{
+			if(Input.GetMouseButtonUp(0))//left button clicked
+			{
+				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+				RaycastHit hit;
+				
+				if(Physics.Raycast(ray, out hit, 100))
+				{
+					//Debug.Log(hit.transform.gameObject.name);
+					if(hit.transform.gameObject.name == "cellDoor" && currentChooserItemId == "cell_key")
+					{
+						GameObject currentScene = SceneManager.instance.sceneObjs[(int)SceneManager.instance.GetCurrentScene()];
+						currentScene.SendMessage("unlock", hit.transform.gameObject);
+						RemoveItemString(currentChooserItemId);
+					}
+				}
+				isTryUsingCurrentItem = false;
+				InventoryManager.instance.currentChooserItemId = "";
+			}
+		}
 	}
 
 	public void UseItem(string itemId)
@@ -204,7 +230,7 @@ public class InventoryManager : MonoBehaviour {
 				GameObject.Find("Main Camera").transform.FindChild("torchlight").GetComponent<TorchLightControl>().isTorchOn = true;
 			}
 		}
-		else if(itemId == "charcole")
+		/*else if(itemId == "charcole")
 		{
 			
 		}
@@ -215,7 +241,7 @@ public class InventoryManager : MonoBehaviour {
 		else if(itemId == "knife1")
 		{
 			
-		}
+		}*/
 		else if(itemId == "TimeDevice")
 		{
 			bool isUsingTDevice = GameObject.Find("Main Camera").GetComponent<cameraEffectController>().isUsingTDevice;
@@ -229,7 +255,7 @@ public class InventoryManager : MonoBehaviour {
 				GameObject.Find("Main Camera").GetComponent<cameraEffectController>().isUsingTDevice = true;
 			}
 		}	
-		else if(itemId == "screwDriver")
+		/*else if(itemId == "screwDriver")
 		{
 			
 		}
@@ -248,6 +274,11 @@ public class InventoryManager : MonoBehaviour {
 		else if(itemId == "key")
 		{
 			
+		}*/
+		else
+		{
+			//wait to use current item on environment.
+			isTryUsingCurrentItem = true;
 		}
 	}
 }

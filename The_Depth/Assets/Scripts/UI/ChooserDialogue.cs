@@ -46,7 +46,6 @@ public class ChooserDialogue : MonoBehaviour {
 			Debug.Log("TODO: show item details");
 		}
 
-		InventoryManager.instance.currentChooserItemId = "";
 		Util.clickedUI = true;
 		Util.HideDialogue();
 		Util.HideChooserDialogue();
