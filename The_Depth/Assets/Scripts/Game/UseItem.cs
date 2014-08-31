@@ -15,6 +15,10 @@ public class UseItem : MonoBehaviour {
 
 	void OnClick()
 	{
+		if(gameObject.GetComponentInChildren<UILabel>().text.Length == 0)
+		{
+			return;
+		}
 		Util.ShowChooserDialogue(Util.chooserDialogueType.ItemAction);
 		InventoryManager.instance.currentChooserItemId = gameObject.transform.FindChild("Label").GetComponent<UILabel>().text;
 	}

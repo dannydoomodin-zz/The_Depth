@@ -19,6 +19,8 @@ public class InventoryManager : MonoBehaviour {
 
 	private bool isTryUsingCurrentItem = false;
 
+	private GameObject ItemDescriptionUI = null;
+
 	public static InventoryManager instance
 	{
 		get
@@ -119,14 +121,14 @@ public class InventoryManager : MonoBehaviour {
 		return i.m_id;
 	}
 
-	public GameObject FindById(string id)
+	public Item FindById(string id)
 	{
 		for(int x = 0; x < itemList.Count; x++)
 		{
 			Item i = (Item)itemList[x];
 			if(i.m_id == id)
 			{
-				return i.m_itemObj;
+				return i;
 			}
 		}
 
@@ -280,5 +282,43 @@ public class InventoryManager : MonoBehaviour {
 			//wait to use current item on environment.
 			isTryUsingCurrentItem = true;
 		}
+	}
+
+	public void showCurrentItemDescription()
+	{
+		if(ItemDescriptionUI == null)
+		{
+			ItemDescriptionUI = GameObject.Find("ItemDescriptionUI");
+		}
+
+		for( int x = 0 ; x< ItemDescriptionUI.transform.childCount ; x++)
+		{
+			ItemDescriptionUI.transform.GetChild(x).gameObject.SetActive(true);
+		}
+
+		Transform itemDesc = ItemDescriptionUI.transform.FindChild("ItemDescriptionLabel");
+		Transform itemImage = ItemDescriptionUI.transform.FindChild("ItemImage");
+
+		Item i = FindById(currentChooserItemId);
+
+		itemDesc.GetComponent<UILabel>().text = i.m_description;
+		itemImage.GetComponent<UISprite>().spriteName = i.m_ImageId;
+
+		TransitionManager.instance.Fade(0.8f,1.0);
+	}
+
+	public void hideCurrentItemDescription()
+	{
+		if(ItemDescriptionUI == null)
+		{
+			ItemDescriptionUI = GameObject.Find("ItemDescriptionUI");
+		}
+		
+		for( int x = 0 ; x< ItemDescriptionUI.transform.childCount ; x++)
+		{
+			ItemDescriptionUI.transform.GetChild(x).gameObject.SetActive(false);
+		}
+
+		TransitionManager.instance.Fade(0.0f,1.0);
 	}
 }

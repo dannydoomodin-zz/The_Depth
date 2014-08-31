@@ -130,7 +130,7 @@ public class Cell : MonoBehaviour {
 				}
 				else if( hit.transform.gameObject.name == "skeleton")
 				{
-					if(InventoryManager.instance.FindById("cell_note1"))
+					if(InventoryManager.instance.FindById("cell_note1") != null)
 					{
 						Util.setDialogue("...");
 					}

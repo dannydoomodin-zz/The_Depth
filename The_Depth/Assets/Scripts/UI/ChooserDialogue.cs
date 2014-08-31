@@ -43,6 +43,7 @@ public class ChooserDialogue : MonoBehaviour {
 		}
 		else if(gameObject.name == "InvestigateButton")
 		{
+			InventoryManager.instance.showCurrentItemDescription();
 			Debug.Log("TODO: show item details");
 		}
 

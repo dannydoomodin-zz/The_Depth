@@ -16,7 +16,7 @@ public class DivingRoom : MonoBehaviour {
 
 	void LateUpdate()
 	{
-		if(InventoryManager.instance.FindById("flashLight"))
+		if(InventoryManager.instance.FindById("flashLight") != null)
 		{
 			roomLight.SetActive(false);
 			return;
