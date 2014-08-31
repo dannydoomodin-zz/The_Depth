@@ -8,6 +8,8 @@ public class LightsMiniGame : MonoBehaviour {
 	private GameObject[] powerCells;
 	const int NUM_OF_POWER_CELLS = 3;
 	public bool canPlayLightsMiniGame = false;
+	private bool startedEngine = false;
+	public GameObject[] OilTankAudios;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +25,21 @@ public class LightsMiniGame : MonoBehaviour {
 			lights[x].SetActive(false);
 		}
 	}
+
+/*	void OnAwake()
+	{
+		var audio1 = OilTankAudios[0].transform.parent.audio;
+		var audio2 = OilTankAudios[1].transform.parent.audio;
+		if(!audio1.isPlaying)
+		{
+			audio1.pla
+		}
+
+		if(!audio2.isPlaying)
+		{
+			
+		}
+	}*/
 	
 	// Update is called once per frame
 	void Update () {
@@ -65,10 +82,24 @@ public class LightsMiniGame : MonoBehaviour {
 
 	bool checkFinished()
 	{
+		if(startedEngine)
+		{
+			return true;
+		}
 	
 		if(lights[0].activeSelf && lights[1].activeSelf && lights[2].activeSelf)
 		{
+			startedEngine = true;
 			Debug.Log ("cells powered up.. engine is going");
+		
+			OilTankAudios[0].audio.audio.PlayDelayed(1.5f);
+			OilTankAudios[1].audio.Play();
+
+			OilTankAudios[0].transform.parent.audio.PlayDelayed(31.5f);
+			OilTankAudios[1].transform.parent.audio.PlayDelayed(30.0f);
+
+			OilTankAudios[0].transform.parent.audio.playOnAwake = true;
+			OilTankAudios[1].transform.parent.audio.playOnAwake = true;
 			return true;
 		}
 
