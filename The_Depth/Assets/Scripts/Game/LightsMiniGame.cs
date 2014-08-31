@@ -7,6 +7,8 @@ public class LightsMiniGame : MonoBehaviour {
 	private GameObject[] lights;
 	private GameObject[] powerCells;
 	const int NUM_OF_POWER_CELLS = 3;
+	public bool canPlayLightsMiniGame = false;
+
 	// Use this for initialization
 	void Start () {
 		lights = new GameObject[NUM_OF_POWER_CELLS];
@@ -20,8 +22,6 @@ public class LightsMiniGame : MonoBehaviour {
 			lights[x] = transform.FindChild("miniGame_light"+(x+1)).gameObject;
 			lights[x].SetActive(false);
 		}
-
-		setLight(0);
 	}
 	
 	// Update is called once per frame
@@ -37,17 +37,26 @@ public class LightsMiniGame : MonoBehaviour {
 				{
 					Debug.Log(hit.transform.gameObject.name);
 					
-					if(hit.transform.gameObject.name == "powerCell1")
+					if(hit.transform.gameObject.name == "powerCell1" && canPlayLightsMiniGame)
 					{
 						turnPowerCell(0);
 					}
-					else if(hit.transform.gameObject.name == "powerCell2")
+					else if(hit.transform.gameObject.name == "powerCell2" && canPlayLightsMiniGame)
 					{
 						turnPowerCell(1);
 					}
-					else if(hit.transform.gameObject.name == "powerCell3")
+					else if(hit.transform.gameObject.name == "powerCell3" && canPlayLightsMiniGame)
 					{
 						turnPowerCell(2);
+					}
+					else if((hit.transform.gameObject.name == "powerCell1" ||  
+					         hit.transform.gameObject.name == "powerCell2" ||
+					         hit.transform.gameObject.name == "powerCell3" ) && !canPlayLightsMiniGame)
+					{
+						ArrayList list = new ArrayList();
+						list.Add("This should be the startup sequence for the engine, but it's not working...");
+						list.Add("Maybe there is something wrong with the engine?");
+						Util.setDialogue(list);
 					}
 				}
 			}
@@ -86,7 +95,7 @@ public class LightsMiniGame : MonoBehaviour {
 		}
 	}
 
-	void setLight(int lightNum)
+	public void setLight(int lightNum)
 	{
 		if(lights[lightNum].activeSelf)
 		{

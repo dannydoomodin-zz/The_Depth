@@ -210,6 +210,17 @@ public class InventoryManager : MonoBehaviour {
 						currentScene.SendMessage("unlock", hit.transform.gameObject);
 						RemoveItemString(currentChooserItemId);
 					}
+					else if(hit.transform.gameObject.name == "oil_barrel" && currentChooserItemId == "Bucket")
+					{
+						RemoveItemString("Bucket");
+						AddItem(new Item("BucketWithFuel",null));
+					}
+					else if(hit.transform.gameObject.name == "oiltank" && currentChooserItemId == "BucketWithFuel")
+					{
+						RemoveItemString("BucketWithFuel");
+						GameObject currentScene = SceneManager.instance.sceneObjs[(int)SceneManager.instance.GetCurrentScene()];
+						currentScene.SendMessage("setEngineFuelState", true);
+					}
 				}
 				isTryUsingCurrentItem = false;
 				InventoryManager.instance.currentChooserItemId = "";

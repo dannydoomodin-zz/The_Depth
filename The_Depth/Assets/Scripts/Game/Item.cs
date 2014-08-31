@@ -70,7 +70,22 @@ public class Item {
 		{
 			return "The note says: I think I'm going mad..., where am I? ... What is going on.... I remember hiding something somewhere. It was somewhere...go to sleep? Under? I need to get out! GET OUT.....";
 		}
-
+		else if(itemId == "corkPieces")
+		{
+			return "A bunch of ordinary cork pieces that I cut up using a knife.";
+		}
+		else if(itemId == "Bucket")
+		{
+			return "A bucket that has its holes plugged up with corks.";
+		}
+		else if(itemId == "cork")
+		{
+			return "A piece of cork from a wine bottle somewhere...Maybe it can be used to plug something else up?";
+		}
+		else if(itemId == "BucketWithFuel")
+		{
+			return "A bucket filled with fuel from the oil barrels.";
+		}
 
 		Debug.Log("item description not found");
 		return "";

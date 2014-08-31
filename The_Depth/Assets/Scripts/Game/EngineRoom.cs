@@ -5,10 +5,22 @@ public class EngineRoom : MonoBehaviour {
 
 	private cameraFollow camScript;
 	private GameObject currentLookingObj;
+	public bool engineHasFuel = false;
+	public LightsMiniGame lightsMiniGame_script;
 
 	// Use this for initialization
 	void Start () {
 		camScript = GameObject.Find ("Main Camera").transform.GetComponent<cameraFollow>();
+	}
+
+	public void setEngineFuelState(bool state)
+	{
+		engineHasFuel = state;
+		if(lightsMiniGame_script)
+		{
+			lightsMiniGame_script.setLight(0);
+			lightsMiniGame_script.canPlayLightsMiniGame = true;
+		}
 	}
 	
 	// Update is called once per frame
