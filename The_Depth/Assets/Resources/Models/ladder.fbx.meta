@@ -1,0 +1,124 @@
+fileFormatVersion: 2
+guid: 092ca89cfe0b4e6429aa4e77414ed791
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: ___DUMMY_Group01
+    100002: Camera
+    100004: ChamferBo0
+    100006: ChamferBo1
+    100008: ChamferBo2
+    100010: ChamferBo3
+    100012: ChamferBo4
+    100014: ChamferBo5
+    100016: ChamferBo6
+    100018: ChamferBo7
+    100020: ChamferBo8
+    100022: ChamferBo9
+    100024: ChamferBox
+    100026: //RootNode
+    100028: Lamp
+    400000: ___DUMMY_Group01
+    400002: Camera
+    400004: ChamferBo0
+    400006: ChamferBo1
+    400008: ChamferBo2
+    400010: ChamferBo3
+    400012: ChamferBo4
+    400014: ChamferBo5
+    400016: ChamferBo6
+    400018: ChamferBo7
+    400020: ChamferBo8
+    400022: ChamferBo9
+    400024: ChamferBox
+    400026: //RootNode
+    400028: Lamp
+    2300000: ChamferBo0
+    2300002: ChamferBo1
+    2300004: ChamferBo2
+    2300006: ChamferBo3
+    2300008: ChamferBo4
+    2300010: ChamferBo5
+    2300012: ChamferBo6
+    2300014: ChamferBo7
+    2300016: ChamferBo8
+    2300018: ChamferBo9
+    2300020: ChamferBox
+    3300000: ChamferBo0
+    3300002: ChamferBo1
+    3300004: ChamferBo2
+    3300006: ChamferBo3
+    3300008: ChamferBo4
+    3300010: ChamferBo5
+    3300012: ChamferBo6
+    3300014: ChamferBo7
+    3300016: ChamferBo8
+    3300018: ChamferBo9
+    3300020: ChamferBox
+    4300000: ChamferBo9
+    4300002: ChamferBo8
+    4300004: ChamferBo7
+    4300006: ChamferBo6
+    4300008: ChamferBo5
+    4300010: ChamferBo4
+    4300012: ChamferBo3
+    4300014: ChamferBo2
+    4300016: ChamferBo1
+    4300018: ChamferBo0
+    4300020: ChamferBox
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

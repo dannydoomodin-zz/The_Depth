@@ -27,11 +27,14 @@ public class DoorController : MonoBehaviour {
 
 		if(!locked)
 		{
-			gameObject.audio.Play();
-
-			if(gameObject.audio.isPlaying)
+			if(gameObject.audio)
 			{
-				yield return new WaitForSeconds(1);
+				gameObject.audio.Play();
+
+				if(gameObject.audio.isPlaying)
+				{
+					yield return new WaitForSeconds(1);
+				}
 			}
 
 			cameraFollow camScript = GameObject.Find ("Main Camera").transform.GetComponent<cameraFollow>();
