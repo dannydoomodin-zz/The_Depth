@@ -10,10 +10,10 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2014
 		Month: 09
-		Day: 17
-		Hour: 15
-		Minute: 23
-		Second: 20
+		Day: 18
+		Hour: 19
+		Minute: 21
+		Second: 34
 		Millisecond: 0
 	}
 	Creator: "FBX SDK/FBX Plugins build 20070228"
@@ -21,7 +21,7 @@ FBXHeaderExtension:  {
 		FlagPLE: 0
 	}
 }
-CreationTime: "2014-09-17 15:23:20:000"
+CreationTime: "2014-09-18 19:21:34:000"
 Creator: "Blender version 2.69 (sub 0)"
 
 ; Object definitions
@@ -29,7 +29,7 @@ Creator: "Blender version 2.69 (sub 0)"
 
 Definitions:  {
 	Version: 100
-	Count: 13
+	Count: 15
 	ObjectType: "Model" {
 		Count: 11
 	}
@@ -37,6 +37,12 @@ Definitions:  {
 		Count: 1
 	}
 	ObjectType: "Material" {
+		Count: 1
+	}
+	ObjectType: "Texture" {
+		Count: 1
+	}
+	ObjectType: "Video" {
 		Count: 1
 	}
 	ObjectType: "Pose" {
@@ -591,6 +597,50 @@ Objects:  {
 			Smoothing: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 			           0,0,0,0,0,0,0,0,0,0,0,0,0
 		}
+		LayerElementUV: 0 {
+			Version: 101
+			Name: "UVMap"
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "IndexToDirect"
+			UV: 0.515202,0.664716,0.500014,0.797974,0.716467,0.980548,0.331345,0.648252,0.500012,0.792071,0.716467,0.908372,
+			    0.716467,0.908223,0.545361,0.404257,0.579158,0.613822,0.691616,0.685408,0.684097,0.442875,0.500014,0.814760,
+			    0.331367,0.814892,0.500014,0.710056,0.499989,0.701481,0.483217,0.395068,0.699697,0.718181,0.500014,0.834203,
+			    0.500014,0.939593,0.483217,0.594549,0.598765,0.611522,0.483217,0.594432,0.547821,0.981442,0.527700,0.646578,
+			    0.560305,0.620633,0.500014,0.909645,0.283561,0.873584,0.283534,0.670340,0.331367,0.892728,0.547821,0.998308,
+			    0.684607,0.611522,0.331340,0.670222,0.682900,0.611522,0.500014,0.815350,0.283533,0.395069,0.527837,0.415412,
+			    0.283534,0.693376,0.547821,0.939707,0.622937,0.404257,0.542930,0.631693,0.483217,0.513538,0.684607,0.395068,
+			    0.584149,0.395068,0.684607,0.442875,0.500014,0.908266,0.512478,0.430424,0.331367,0.833969,0.500014,0.961467,
+			    0.500014,0.814876,0.682900,0.505435,0.603923,0.397388,0.331367,0.873650,0.699697,0.812380,0.500195,0.707862,
+			    0.283561,0.797310,0.500014,0.612592,0.500014,0.892270,0.682900,0.500973,0.547821,0.961655,0.499987,0.695801,
+			    0.500012,0.792241,0.716467,0.906434,0.682900,0.492230,0.682900,0.500350,0.655820,0.430424,0.283561,0.853810,
+			    0.283533,0.690885,0.699697,0.715782,0.684607,0.455562,0.716467,0.997216,0.716467,0.916313,0.331340,0.689506,
+			    0.484738,0.492230,0.499987,0.670601,0.473911,0.693585,0.483217,0.596948,0.716467,0.905843,0.640460,0.415412,
+			    0.283533,0.611522,0.283534,0.693453,0.283561,0.910121,0.283561,0.892598,0.547821,0.908223,0.682900,0.596948,
+			    0.499992,0.648890,0.669830,0.646578,0.697990,0.715782,0.500014,0.812380,0.654600,0.631693,0.331367,0.611522,
+			    0.500014,0.895138,0.483217,0.500350,0.500014,0.797284,0.283560,0.611836,0.283538,0.648444,0.490506,0.469586,
+			    0.500001,0.629303,0.331367,0.797310,0.682900,0.489641,0.500014,0.715782,0.716467,0.939304,0.637225,0.620633,
+			    0.500014,0.981189,0.283561,0.797498,0.483217,0.611522,0.283536,0.701506,0.283537,0.706549,0.564375,0.397388,
+			    0.500014,0.916406,0.500014,0.873416,0.500014,0.807263,0.331367,0.853810,0.716467,0.960993,0.683757,0.395068,
+			    0.699697,0.717585,0.505914,0.685408,0.618372,0.613822,0.283536,0.702124,0.500014,0.908223,0.500012,0.792209,
+			    0.500014,0.997999,0.500014,0.853810,0.331367,0.910310,0.547821,0.916443,0.331354,0.628432,0.499872,0.448716,
+			    0.560508,0.908223,0.697335,0.707862,0.283547,0.628690,0.716467,0.812380,0.283561,0.834036,0.677792,0.469586,
+			    0.500014,0.807295,0.283561,0.815022,0.484067,0.500350,0.668425,0.448716,0.500014,0.807123,0.682328,0.664716,
+			    0.499987,0.693602,0.682900,0.492153
+			UVIndex: 78,34,15,104,63,134,72,62,139,135,131,98,139,95,135,45,135,95,125,62,72,95,139,77,64,135,45,7,77,45,35,50,38,77,7,42,50,7,107,40,63,57,21,40,134,63,21,57,49,19,91,134,40,19,49,83,75,99,86,136,53,127,99,13,
+			         127,86,99,115,9,127,53,137,9,115,0,23,85,137,0,110,136,86,114,86,67,114,16,132,110,114,39,88,85,23,8,101,88,24,20,116,101,8,39,24,88,52,87,132,16,74,138,59,71,73,138,74,71,31,73,27,31,71,66,31,3,84,73,94,
+			         3,31,27,3,124,96,84,128,124,3,94,124,89,55,96,93,89,124,128,122,28,56,25,81,28,122,80,56,28,51,109,51,28,81,26,109,51,111,121,111,51,26,65,111,46,17,121,130,46,111,65,46,12,33,17,133,12,46,130,33,12,97,1,97,
+			         12,133,103,69,29,22,2,22,29,120,102,2,22,58,112,58,22,102,47,112,58,37,100,37,58,47,18,100,37,123,70,123,37,18,108,70,123,82,5,82,123,108,44,32,10,68,30,68,10,43,10,113,41,43,105,79,4,117,106,117,4,119,79,36,
+			         14,4,74,59,14,36,54,106,119,60,36,66,71,74,92,54,60,90,48,76,82,76,61,126,82,11,129,76,48,82,118,90,87,129,11,61,6,126
+		}
+		LayerElementTexture: 0 {
+			Version: 101
+			Name: "UVMap"
+			MappingInformationType: "AllSame"
+			ReferenceInformationType: "IndexToDirect"
+			BlendMode: "Translucent"
+			TextureAlpha: 1
+			TextureId: 0
+		}
 		LayerElementMaterial: 0 {
 			Version: 101
 			Name: ""
@@ -606,6 +656,14 @@ Objects:  {
 			}
 			LayerElement:  {
 				Type: "LayerElementSmoothing"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementUV"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementTexture"
 				TypedIndex: 0
 			}
 			LayerElement:  {
@@ -1692,7 +1750,7 @@ Objects:  {
 		AudioColor: 0,1,0
 		CameraOrthoZoom: 1
 	}
-	Material: "Material::unnamed", "" {
+	Material: "Material::None__subCommandCentreDeck", "" {
 		Version: 102
 		ShadingModel: "phong"
 		MultiLayer: 0
@@ -1721,6 +1779,56 @@ Objects:  {
 			Property: "Opacity", "double", "",1.0
 			Property: "Reflectivity", "double", "",0
 		}
+	}
+	Video: "Video::subCommandCentreDeck", "Clip" {
+		Type: "Clip"
+		Properties60:  {
+			Property: "FrameRate", "double", "",0
+			Property: "LastFrame", "int", "",0
+			Property: "Width", "int", "",0
+			Property: "Height", "int", "",0
+			Property: "Path", "charptr", "", "."
+			Property: "StartFrame", "int", "",0
+			Property: "StopFrame", "int", "",0
+			Property: "PlaySpeed", "double", "",1
+			Property: "Offset", "KTime", "",0
+			Property: "InterlaceMode", "enum", "",0
+			Property: "FreeRunning", "bool", "",0
+			Property: "Loop", "bool", "",0
+			Property: "AccessMode", "enum", "",0
+		}
+		UseMipMap: 0
+		Filename: "."
+		RelativeFilename: "."
+	}
+	Texture: "Texture::subCommandCentreDeck", "TextureVideoClip" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::subCommandCentreDeck"
+		Properties60:  {
+			Property: "Translation", "Vector", "A+",0,0,0
+			Property: "Rotation", "Vector", "A+",0,0,0
+			Property: "Scaling", "Vector", "A+",1,1,1
+			Property: "Texture alpha", "Number", "A+",0
+			Property: "TextureTypeUse", "enum", "",0
+			Property: "CurrentTextureBlendMode", "enum", "",1
+			Property: "UseMaterial", "bool", "",0
+			Property: "UseMipMap", "bool", "",0
+			Property: "CurrentMappingType", "enum", "",0
+			Property: "UVSwap", "bool", "",0
+			Property: "WrapModeU", "enum", "",0
+			Property: "WrapModeV", "enum", "",0
+			Property: "TextureRotationPivot", "Vector3D", "",0,0,0
+			Property: "TextureScalingPivot", "Vector3D", "",0,0,0
+			Property: "VideoProperty", "object", ""
+		}
+		Media: "Video::subCommandCentreDeck"
+		FileName: "."
+		RelativeFilename: "."
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
 	}
 	Pose: "Pose::BIND_POSES", "BindPose" {
 		Type: "BindPose"
@@ -1773,7 +1881,11 @@ Relations:  {
 	}
 	Model: "Model::Camera Switcher", "CameraSwitcher" {
 	}
-	Material: "Material::unnamed", "" {
+	Material: "Material::None__subCommandCentreDeck", "" {
+	}
+	Texture: "Texture::subCommandCentreDeck", "TextureVideoClip" {
+	}
+	Video: "Video::subCommandCentreDeck", "Clip" {
 	}
 }
 
@@ -1784,7 +1896,9 @@ Connections:  {
 	Connect: "OO", "Model::Cube", "Model::Scene"
 	Connect: "OO", "Model::Lamp", "Model::Scene"
 	Connect: "OO", "Model::Camera", "Model::Scene"
-	Connect: "OO", "Material::unnamed", "Model::Cube"
+	Connect: "OO", "Material::None__subCommandCentreDeck", "Model::Cube"
+	Connect: "OO", "Texture::subCommandCentreDeck", "Model::Cube"
+	Connect: "OO", "Video::subCommandCentreDeck", "Texture::subCommandCentreDeck"
 }
 ;Takes and animation section
 ;----------------------------------------------------
