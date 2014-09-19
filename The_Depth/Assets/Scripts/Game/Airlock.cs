@@ -29,6 +29,11 @@ public class Airlock : MonoBehaviour {
 				{
 					hit.transform.SendMessage("AddToInventory");
 				}
+
+				if(hit.transform.gameObject.name == "OutDoor")
+				{
+					Util.setDialogue("Can't open it something seems to be blocking the way...");
+				}
 				
 			}
 		}
