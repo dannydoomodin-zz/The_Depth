@@ -32,19 +32,19 @@ public class Item {
 		}
 		else if(itemId == "knife1")
 		{
-			return "";
+			return "knifeUI";
 		}
 		else if(itemId == "TimeDevice")
 		{
-			return "";
+			return "timeDeviceUI";
 		}	
 		else if(itemId == "screwDriver")
 		{
-			return "";
+			return "screwdriverUI";
 		}
 		else if(itemId == "wrench1")
 		{
-			return "";
+			return "wrenchUI";
 		}
 		else if(itemId == "brokenBucket")
 		{
@@ -52,11 +52,11 @@ public class Item {
 		}
 		else if(itemId == "cell_mirror")
 		{
-			return "";
+			return "mirrorUI";
 		}
 		else if(itemId == "cell_key")
 		{
-			return "";
+			return "keyUI";
 		}
 		else if(itemId == "cell_note1")
 		{
@@ -76,11 +76,11 @@ public class Item {
 		}
 		else if(itemId == "Bucket")
 		{
-			return "";
+			return "bucketUI";
 		}
 		else if(itemId == "cork")
 		{
-			return "";
+			return "corkUI";
 		}
 		else if(itemId == "BucketWithFuel")
 		{
