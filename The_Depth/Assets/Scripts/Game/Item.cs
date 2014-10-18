@@ -13,7 +13,82 @@ public class Item {
 		m_id = id; 
 		m_itemObj = itemObj;
 		m_description = GetItemDescription(m_id);
-		m_ImageId = imageId;
+		m_ImageId = GetItemImage(m_id);
+	}
+
+	private string GetItemImage(string itemId)
+	{
+		if(itemId == "flashLight")
+		{
+			return "torchUI";
+		}
+		else if(itemId == "charcole")
+		{
+			return "charcoleUI";
+		}
+		else if(itemId == "paper")
+		{
+			return "paperUI";
+		}
+		else if(itemId == "knife1")
+		{
+			return "";
+		}
+		else if(itemId == "TimeDevice")
+		{
+			return "";
+		}	
+		else if(itemId == "screwDriver")
+		{
+			return "";
+		}
+		else if(itemId == "wrench1")
+		{
+			return "";
+		}
+		else if(itemId == "brokenBucket")
+		{
+			return "";
+		}
+		else if(itemId == "cell_mirror")
+		{
+			return "";
+		}
+		else if(itemId == "cell_key")
+		{
+			return "";
+		}
+		else if(itemId == "cell_note1")
+		{
+			return "cell_notes1";
+		}
+		else if(itemId == "cell_note2")
+		{
+			return "cell_notes2";
+		}		
+		else if(itemId == "cell_note3")
+		{
+			return "cell_notes3";
+		}
+		else if(itemId == "corkPieces")
+		{
+			return "";
+		}
+		else if(itemId == "Bucket")
+		{
+			return "";
+		}
+		else if(itemId == "cork")
+		{
+			return "";
+		}
+		else if(itemId == "BucketWithFuel")
+		{
+			return "";
+		}
+		
+		Debug.Log("item image not found");
+		return "";
 	}
 
 	private string GetItemDescription(string itemId)
