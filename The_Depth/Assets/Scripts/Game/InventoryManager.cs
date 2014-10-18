@@ -315,7 +315,7 @@ public class InventoryManager : MonoBehaviour {
 		itemDesc.GetComponent<UILabel>().text = i.m_description;
 		itemImage.GetComponent<UISprite>().spriteName = i.m_ImageId;
 
-		TransitionManager.instance.Fade(0.8f,1.0);
+		TransitionManager.instance.Fade(1.0f,1.0);
 	}
 
 	public void hideCurrentItemDescription()
