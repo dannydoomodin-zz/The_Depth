@@ -24,6 +24,9 @@ ModelImporter:
     3300002: FDirect01
     3300004: Helix01
     4300004: Helix01
+    6400000: Camera02
+    6400002: FDirect01
+    6400004: Helix01
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -47,7 +50,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0

@@ -221,6 +221,12 @@ public class InventoryManager : MonoBehaviour {
 						GameObject currentScene = SceneManager.instance.sceneObjs[(int)SceneManager.instance.GetCurrentScene()];
 						currentScene.SendMessage("setEngineFuelState", true);
 					}
+					else if(hit.transform.gameObject.name == "bolt" && currentChooserItemId == "screwDriver")
+					{
+						RemoveItemString("screwDriver");
+						GameObject currentScene = SceneManager.instance.sceneObjs[(int)SceneManager.instance.GetCurrentScene()];
+						currentScene.SendMessage("unlockPlaquePanel", false);
+					}
 				}
 				isTryUsingCurrentItem = false;
 				InventoryManager.instance.currentChooserItemId = "";
