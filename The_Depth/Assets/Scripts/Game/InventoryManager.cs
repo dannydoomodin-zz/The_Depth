@@ -227,6 +227,14 @@ public class InventoryManager : MonoBehaviour {
 						GameObject currentScene = SceneManager.instance.sceneObjs[(int)SceneManager.instance.GetCurrentScene()];
 						currentScene.SendMessage("unlockPlaquePanel", false);
 					}
+					else if((hit.transform.gameObject.name == "circuit" ||
+					         hit.transform.gameObject.name == "poles")
+					         && currentChooserItemId == "wrench1")
+					{
+						RemoveItemString("wrench1");
+						GameObject currentScene = SceneManager.instance.sceneObjs[(int)SceneManager.instance.GetCurrentScene()];
+						currentScene.SendMessage("setPlaqueFixed", true);
+					}
 				}
 				isTryUsingCurrentItem = false;
 				InventoryManager.instance.currentChooserItemId = "";
