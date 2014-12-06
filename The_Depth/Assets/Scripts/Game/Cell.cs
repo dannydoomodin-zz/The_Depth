@@ -149,7 +149,11 @@ public class Cell : MonoBehaviour {
 					hit.transform.SendMessage("AddToInventory");
 					Util.setDialogue("there should be another note.... where is it?");
 				}
-
+				else if(hit.transform.gameObject.name == "pillowOff")
+				{
+					hit.transform.gameObject.SetActive(false);
+					transform.FindChild("cellBed").FindChild("pillowOn").gameObject.SetActive( true);
+				}
 			}
 		}
 		else if(Input.GetMouseButtonDown(1))

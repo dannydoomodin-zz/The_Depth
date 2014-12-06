@@ -52,7 +52,7 @@ Then we apply the smoothed values to the transform's position.
 
 	}
 
-	void LateUpdate () {
+	void Update () {
 		// Early out if we don't have a target
 		if (!target)
 			return; 
