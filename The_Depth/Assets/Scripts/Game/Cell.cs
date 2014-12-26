@@ -96,7 +96,7 @@ public class Cell : MonoBehaviour {
 						currentLookingObj = hit.transform.gameObject;
 						camScript.height = Constants.camHeight[(int)Constants.clickableScenes.toilet];
 						hit.transform.collider.enabled = false;
-						hit.transform.FindChild("toiletTop").collider.enabled = true;
+						hit.transform.FindChild("toilet_top").collider.enabled = true;
 					}
 					else if(hit.transform.gameObject.name == "sink")
 					{
@@ -148,11 +148,6 @@ public class Cell : MonoBehaviour {
 				{
 					hit.transform.SendMessage("AddToInventory");
 					Util.setDialogue("there should be another note.... where is it?");
-				}
-				else if(hit.transform.gameObject.name == "pillowOff")
-				{
-					hit.transform.gameObject.SetActive(false);
-					transform.FindChild("cellBed").FindChild("pillowOn").gameObject.SetActive( true);
 				}
 			}
 		}
