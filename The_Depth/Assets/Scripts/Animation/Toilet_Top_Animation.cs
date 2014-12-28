@@ -10,9 +10,8 @@ public class Toilet_Top_Animation : MonoBehaviour {
 
 	void Update()
 	{
-		if(Util.clickedUI)
+		if(UICamera.hoveredObject != null)
 		{
-			Util.clickedUI = false;
 			return;
 		}
 		

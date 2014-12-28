@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class Util : MonoBehaviour {
-
-	public static bool clickedUI = false;
+	
 	public static GameObject dialogueObj = null;
 
 	private static ArrayList multipleDialogues = null;

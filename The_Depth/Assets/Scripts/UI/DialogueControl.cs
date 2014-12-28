@@ -10,12 +10,11 @@ public class DialogueControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 	void OnClick ()
 	{
-		Util.clickedUI = true;
 		Util.nextDialogue();
 	}
 }

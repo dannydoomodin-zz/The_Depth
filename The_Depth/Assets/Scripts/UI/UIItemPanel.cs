@@ -17,7 +17,6 @@ public class UIItemPanel : MonoBehaviour {
 			InventoryManager.instance.UpdateInventoryUI();
 		}
 
-		Util.clickedUI = true;
 	}
 
 }

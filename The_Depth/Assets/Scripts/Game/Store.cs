@@ -15,9 +15,8 @@ public class Store : MonoBehaviour {
 	
 	void updateInputs()
 	{
-		if(Util.clickedUI)
+		if(UICamera.hoveredObject != null)
 		{
-			Util.clickedUI = false;
 			return;
 		}
 

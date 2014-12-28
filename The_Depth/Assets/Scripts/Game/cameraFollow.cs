@@ -29,9 +29,8 @@ Then we apply the smoothed values to the transform's position.
 
 	void UpdateInput()
 	{	
-		if(Util.clickedUI)
+		if(UICamera.hoveredObject != null)
 		{
-			Util.clickedUI = false;
 			return;
 		}
 

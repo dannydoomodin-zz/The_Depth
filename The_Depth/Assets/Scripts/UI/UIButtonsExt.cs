@@ -10,7 +10,5 @@ public class UIButtonsExt : MonoBehaviour {
 	void OnClick ()
 	{
 		objToInvoke.SendMessage(methodToInvoke, param, SendMessageOptions.DontRequireReceiver);
-		Util.clickedUI = true;
-		//scriptToInvoke.Invoke(methodToInvoke, 0);
 	}
 }

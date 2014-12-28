@@ -10,9 +10,8 @@ public class Airlock : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Util.clickedUI)
+		if(UICamera.hoveredObject != null)
 		{
-			Util.clickedUI = false;
 			return;
 		}
 		

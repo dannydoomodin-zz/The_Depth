@@ -47,7 +47,6 @@ public class ChooserDialogue : MonoBehaviour {
 			Debug.Log("TODO: show item details");
 		}
 
-		Util.clickedUI = true;
 		Util.HideDialogue();
 		Util.HideChooserDialogue();
 	}
