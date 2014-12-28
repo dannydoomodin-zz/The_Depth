@@ -28,6 +28,7 @@ public class Toilet_Top_Animation : MonoBehaviour {
 				if(hit.transform.gameObject.name == "toilet_top")
 				{
 					startAnimation = true;
+					transform.collider.enabled = false;
 				}
 			}
 		}
