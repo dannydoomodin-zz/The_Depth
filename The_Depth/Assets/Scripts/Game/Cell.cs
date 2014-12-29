@@ -117,6 +117,11 @@ public class Cell : MonoBehaviour {
 						Util.setDialogue("The cell door is locked shut! I could find the key, or try force it open...", hit.transform.gameObject);
 						Util.ShowChooserDialogue();
 				}
+				else if(hit.transform.gameObject.name == "toilet_top" ||
+				        hit.transform.gameObject.name == "pillow")
+				{
+					hit.transform.SendMessage("StartAnimation");
+				}
 				else if(hit.transform.gameObject.name == "cell_key"
 				        || hit.transform.gameObject.name == "cell_note3"
 				        || hit.transform.gameObject.name == "cell_mirror")

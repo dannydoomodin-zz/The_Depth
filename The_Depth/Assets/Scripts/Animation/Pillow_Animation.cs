@@ -12,31 +12,15 @@ public class Pillow_Animation : MonoBehaviour {
 	public float tiltAngle = -90.0f;
 	public bool startAnimation = false;
 	public Quaternion target;
-	
-	void Update()
+
+	void StartAnimation()
 	{
-		if(UICamera.hoveredObject != null)
-		{
-			return;
-		}
-		
-		if(Input.GetMouseButtonUp(0))
-		{
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			RaycastHit hit;
-			
-			if(Physics.Raycast(ray, out hit, 100))
-			{
-				Debug.Log(hit.transform.gameObject.name);
-				
-				if(hit.transform.gameObject.name == "pillow")
-				{
-					startAnimation = true;
-					transform.collider.enabled = false;
-				}
-			}
-		}
-		
+		startAnimation = true;
+		transform.collider.enabled = false;
+	}
+
+	void Update()
+	{	
 		if(startAnimation)
 		{
 			var target = Quaternion.Euler(tiltAngle,transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z );
