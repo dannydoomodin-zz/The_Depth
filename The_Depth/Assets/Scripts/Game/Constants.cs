@@ -7,6 +7,7 @@ public class Constants {
 		toilet,
 		sink,
 		crate1,
+		cellKeyBox,
 	}
 
 	public static float[] camHeight = 
@@ -14,6 +15,7 @@ public class Constants {
 		0.7f,
 		0.4f,
 		0.0f,
+		0.7f,
 	};
 
 	public static float scrollTextDuration = 50.0f;

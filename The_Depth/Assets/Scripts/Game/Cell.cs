@@ -109,6 +109,11 @@ public class Cell : MonoBehaviour {
 						camScript.height = 0;
 						hit.transform.collider.enabled = false;
 					}
+					else if(hit.transform.gameObject.name == "cellKeyBoxCube")
+					{
+						currentLookingObj = hit.transform.gameObject;
+						camScript.height = Constants.camHeight[(int)Constants.clickableScenes.cellKeyBox];
+					}
 				}
 				
 				if(hit.transform.gameObject.name == "cellDoor")
@@ -118,7 +123,8 @@ public class Cell : MonoBehaviour {
 						Util.ShowChooserDialogue();
 				}
 				else if(hit.transform.gameObject.name == "toilet_top" ||
-				        hit.transform.gameObject.name == "pillow")
+				        hit.transform.gameObject.name == "pillow" ||
+				        hit.transform.gameObject.name == "cellKeyBoxTopCube")
 				{
 					hit.transform.SendMessage("StartAnimation");
 				}
