@@ -8,7 +8,7 @@ public class subHullWindowAnimator : MonoBehaviour {
 	public float[] triggerPos;
 	public Transform finishPos;
 	public float time = 0.05f;
-	private bool start = false;
+	public bool start = false;
 	private int currentTackPanel = 0;
 
 	// Use this for initialization
@@ -26,15 +26,15 @@ public class subHullWindowAnimator : MonoBehaviour {
 		AnimateObj.Add(WindowObjs[WindowObjs.Count -1]);
 		WindowObjs.RemoveAt(WindowObjs.Count -1);
 	}
-	
+
+	void StartAnimation()
+	{
+		start = true;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		var tempArrayList = AnimateObj;
-
-		if(Input.GetKeyDown(KeyCode.Space))
-		{
-			start = true;
-		}
 
 		if(start)
 		{

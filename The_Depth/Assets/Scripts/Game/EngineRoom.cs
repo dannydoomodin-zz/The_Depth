@@ -22,7 +22,12 @@ public class EngineRoom : MonoBehaviour {
 			lightsMiniGame_script.canPlayLightsMiniGame = true;
 		}
 	}
-	
+
+	public bool getEngineStarted()
+	{
+		return lightsMiniGame_script.startedEngine;
+	}
+
 	// Update is called once per frame
 	void LateUpdate () {
 		updateInputs();

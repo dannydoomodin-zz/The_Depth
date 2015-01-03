@@ -8,7 +8,7 @@ public class LightsMiniGame : MonoBehaviour {
 	private GameObject[] powerCells;
 	const int NUM_OF_POWER_CELLS = 3;
 	public bool canPlayLightsMiniGame = false;
-	private bool startedEngine = false;
+	public bool startedEngine = false;
 	public GameObject[] OilTankAudios;
 
 	// Use this for initialization

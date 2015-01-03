@@ -5,7 +5,7 @@ public class CommandCentre : MonoBehaviour {
 
 	private cameraFollow camScript;
 	private GameObject currentLookingObj;
-
+	public GameObject subHullWindowObj;
 	private bool plaqueFixed = false;
 
 	// Use this for initialization
@@ -65,6 +65,11 @@ public class CommandCentre : MonoBehaviour {
 						currentLookingObj = hit.transform.gameObject;
 						hit.transform.collider.enabled = false;
 					}
+					else if( hit.transform.gameObject.name == "frontTop" ||
+					        hit.transform.gameObject.name == "frontBottom")
+					{
+						currentLookingObj = hit.transform.gameObject;
+					}
 				}
 
 				
@@ -73,13 +78,26 @@ public class CommandCentre : MonoBehaviour {
 					Debug.Log("Looks like a panel hiding the circuit, maybe I can open it with a screwdriver");
 					Util.setDialogue("Looks like a panel hiding the circuit, maybe I can open it with a screwdriver");
 				}
-				else if(hit.transform.gameObject.name == "circuit")
+				else if(hit.transform.gameObject.name == "circuit" && !plaqueFixed)
 				{
-					ArrayList list = new ArrayList();
-					list.Add("The wire connecting the two poles are missing...");
-					list.Add("..To get this plaque working again I need to connect them..");
-					list.Add("Hmm anything metallic will do...");
-					Util.setDialogue(list);
+					if(ProgressManager.instance.isEngineStarted())
+					{
+						ArrayList list = new ArrayList();
+						list.Add("The wire connecting the two poles are missing...");
+						list.Add("..To get this plaque working again I need to connect them..");
+						list.Add("Hmm anything metallic will do...");
+						Util.setDialogue(list);
+					}
+					else
+					{
+						Debug.Log("There doesn't seem to be any power... Time to check the generator...");
+						Util.setDialogue("There doesn't seem to be any power... Time to check the generator...");
+					}
+				}
+				else if((hit.transform.gameObject.name == "button" ||
+				         hit.transform.gameObject.name == "buttonBase") && plaqueFixed && ProgressManager.instance.isEngineStarted())
+				{
+					subHullWindowObj.SendMessage("StartAnimation");
 				}
 			}
 
@@ -96,6 +114,10 @@ public class CommandCentre : MonoBehaviour {
 				
 				currentLookingObj = null;
 			}
+		}
+		else if( Input.GetKeyDown(KeyCode.Space))
+		{
+			subHullWindowObj.SendMessage("StartAnimation");
 		}
 	}
 }

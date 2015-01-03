@@ -229,7 +229,8 @@ public class InventoryManager : MonoBehaviour {
 					}
 					else if((hit.transform.gameObject.name == "circuit" ||
 					         hit.transform.gameObject.name == "poles")
-					         && currentChooserItemId == "wrench1")
+					         && currentChooserItemId == "wrench1"
+					        && ProgressManager.instance.isEngineStarted())
 					{
 						RemoveItemString("wrench1");
 						GameObject currentScene = SceneManager.instance.sceneObjs[(int)SceneManager.instance.GetCurrentScene()];

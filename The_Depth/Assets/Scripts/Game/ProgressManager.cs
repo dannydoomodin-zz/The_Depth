@@ -57,6 +57,15 @@ public class ProgressManager : MonoBehaviour {
 		puzzlesCompleted[(int)puzzle] = true;
 	}
 
+	public bool isEngineStarted()
+	{
+		GameObject engineRoom =  SceneManager.instance.sceneObjs[(int)SceneManager.Scenes.EngineRoom];
+		EngineRoom script = engineRoom.transform.GetComponent<EngineRoom>();
+		
+		return script.getEngineStarted();
+		
+	}
+
 	// Use this for initialization
 	void Start () {
 		puzzlesCompleted = new bool[numberOfPuzzles];
