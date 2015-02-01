@@ -75,7 +75,24 @@ public class DivingRoom : MonoBehaviour {
 
 					if(anim)
 					{
-						anim.Play ("Open");
+						if(anim.clip == null)
+						{
+							anim.clip = anim["Open"].clip;
+							anim.Play ("Open");
+						}
+						else
+						{
+							if(anim.clip.name == "Open")
+							{
+								anim.clip = anim["Close"].clip;
+								anim.Play ("Close");
+							}
+							else
+							{
+								anim.clip = anim["Open"].clip;
+								anim.Play ("Open");
+							}
+						}
 					}
 
 					if(audio)
