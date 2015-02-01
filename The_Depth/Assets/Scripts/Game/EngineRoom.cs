@@ -81,5 +81,9 @@ public class EngineRoom : MonoBehaviour {
 				currentLookingObj = null;
 			}
 		}
+		else if(Input.GetKeyDown(KeyCode.M))
+		{
+			setEngineFuelState(true);
+		}
 	}
 }

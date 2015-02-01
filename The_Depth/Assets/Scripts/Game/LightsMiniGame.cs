@@ -140,17 +140,13 @@ public class LightsMiniGame : MonoBehaviour {
 
 	void turnOn(int cellNum)
 	{
-		Material offLight = Resources.LoadAssetAtPath("Assets/Resources/Materials/Light_on.mat", typeof(Material)) as Material;
-		sphereLights[cellNum].renderer.material = offLight;
-
-		lights[cellNum].SetActive(true);
+		sphereLights[cellNum].renderer.material.color = new Color(126f/255f,231f/255f,7f/255f);
+		lights[cellNum].SetActive(true);	
 	}
 
 	void turnOff(int cellNum)
 	{
-		Material onLight = Resources.LoadAssetAtPath("Assets/Resources/Materials/Light_off.mat", typeof(Material)) as Material;
-		sphereLights[cellNum].renderer.material = onLight;
-		
+		sphereLights[cellNum].renderer.material.color = new Color(141f/255f,17f/255f,6f/255f);
 		lights[cellNum].SetActive(false);
 	}
 }
