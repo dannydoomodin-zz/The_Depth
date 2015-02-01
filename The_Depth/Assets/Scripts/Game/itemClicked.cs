@@ -49,5 +49,8 @@ public class itemClicked : MonoBehaviour {
 		//add to inventory
 		Item i = new Item(gameObject.name, gameObject);
 		InventoryManager.instance.AddItem(i);
+
+		InventoryManager.instance.currentChooserItemId = gameObject.name;
+		InventoryManager.instance.showCurrentItemDescription();
 	}
 }
