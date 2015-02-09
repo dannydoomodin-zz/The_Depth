@@ -42,6 +42,8 @@ public class DoorController : MonoBehaviour {
 			SceneManager.instance.HideAllScene(sceneEnum);
 			SceneManager.instance.DisplayScene(sceneEnum);
 			camScript.target = toPointer.transform;
+			var camPointer_script = toPointer.transform.GetComponent<camPointer_script>();
+			camPointer_script.updateUI();
 			camScript.isDoorTransition = true;
 			
 			if(sceneEnum == SceneManager.Scenes.DivingRoom || sceneEnum == SceneManager.Scenes.Airlock)
