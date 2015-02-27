@@ -26,6 +26,11 @@ public class camPointer_script : MonoBehaviour {
 	public PathManager waypointPathD;
 	public PathManager waypointPathU;
 	public PathManager waypointPathR;
+	
+	public bool leftCamLock;
+	public bool DownCamLock;
+	public bool UpCamLock;
+	public bool RightCamLock; 
 
 	public GameObject colliderObj;
 
@@ -71,6 +76,10 @@ public class camPointer_script : MonoBehaviour {
 			Debug.Log("go left");
 			camScript.target = Left.transform;
 			pathScript.pathContainer = waypointPathL;
+			if(leftCamLock)
+			{
+				pathScript.orientToPath = splineMove.OrientToPathType.none;
+			}
 			setPathInfo(waypointPathL.waypoints.Length);
 			updateUI();
 		}
@@ -89,6 +98,10 @@ public class camPointer_script : MonoBehaviour {
 			camScript.target = Right.transform;
 			camScript.height = RightCamHeight;
 			pathScript.pathContainer = waypointPathR;
+			if(RightCamLock)
+			{
+				pathScript.orientToPath = splineMove.OrientToPathType.none;
+			}
 			setPathInfo(waypointPathR.waypoints.Length);
 			updateUI();
 		}
@@ -106,6 +119,10 @@ public class camPointer_script : MonoBehaviour {
 			camScript.target = Up.transform;
 			camScript.height = UpCamHeight;
 			pathScript.pathContainer = waypointPathU;
+			if(UpCamLock)
+			{
+				pathScript.orientToPath = splineMove.OrientToPathType.none;
+			}
 			setPathInfo(waypointPathU.waypoints.Length);
 			updateUI();
 		}
@@ -123,6 +140,10 @@ public class camPointer_script : MonoBehaviour {
 			camScript.target = Down.transform;
 			camScript.height = DownCamHeight;
 			pathScript.pathContainer = waypointPathD;
+			if(DownCamLock)
+			{
+				pathScript.orientToPath = splineMove.OrientToPathType.none;
+			}
 			setPathInfo(waypointPathD.waypoints.Length);
 			updateUI();
 		}

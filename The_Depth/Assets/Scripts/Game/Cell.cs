@@ -1,9 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using SWS;
 
 public class Cell : MonoBehaviour {
 
+	public PathManager bedBottomPath;
+	public PathManager sinkPath;
+	public PathManager ToiletPath;
+
 	private cameraFollow camScript;
+	private splineMove pathScript;
 	private GameObject currentLookingObj;
 
 	private GameObject doorObject;
@@ -70,6 +76,31 @@ public class Cell : MonoBehaviour {
 		Util.setDialogue(list);
 	}
 
+	public void initialiseScripts()
+	{
+		GameObject mainCam = GameObject.Find ("Main Camera");
+		if (pathScript == null) 
+		{
+			pathScript = mainCam.transform.GetComponent<splineMove> ();
+		}
+	}
+	
+	public void setPathInfo(int numberOfWaypoint)
+	{
+		pathScript.orientToPath = splineMove.OrientToPathType.to3D;
+
+		pathScript.messages.list.Clear();
+		pathScript.messages.Initialize(numberOfWaypoint);
+		var lastWaypoint = pathScript.messages.GetMessageOption(numberOfWaypoint -1);
+		
+		lastWaypoint.message = new System.Collections.Generic.List<string>(){"focusOnObject"};
+		lastWaypoint.obj = new System.Collections.Generic.List<Object>(){GameObject.Find ("Main Camera")};
+		lastWaypoint.type = new System.Collections.Generic.List<MessageOptions.ValueType>(){MessageOptions.ValueType.Object};
+		
+		pathScript.ResetMove();
+		pathScript.StartMove();
+	}
+
 	void updateInputs()
 	{
 		if(UICamera.hoveredObject != null)
@@ -89,6 +120,7 @@ public class Cell : MonoBehaviour {
 				if(ptr)
 				{
 					Debug.Log("go to mouse pointer");
+					initialiseScripts();
 					camScript.target = ptr;
 					if (hit.transform.gameObject.name == "toilet")
 					{
@@ -108,6 +140,9 @@ public class Cell : MonoBehaviour {
 						currentLookingObj = hit.transform.gameObject;
 						camScript.height = 0;
 						hit.transform.collider.enabled = false;
+						camScript.enabled = false;
+						pathScript.pathContainer = bedBottomPath;
+						setPathInfo(bedBottomPath.waypoints.Length);
 					}
 					else if(hit.transform.gameObject.name == "cellKeyBoxCube")
 					{
