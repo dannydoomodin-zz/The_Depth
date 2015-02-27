@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour {
 	
-	private Transform currentPosition;
+	public Transform currentPosition;
 
 	// Update is called once per frame
 	void Update () {
@@ -30,27 +30,40 @@ public class CameraController : MonoBehaviour {
 	}
 
 	public void turnRight()
-	{
-		currentPosition = this.GetComponent<cameraFollow>().target;
+	{   
+		var camFollow = this.GetComponent<cameraFollow> ();
+		currentPosition = camFollow.target;
+		camFollow.enabled = false;
 		currentPosition.GetComponent<camPointer_script>().goRight();
 	}
 
 	public void turnLeft()
 	{
-		currentPosition = this.GetComponent<cameraFollow>().target;
+		var camFollow = this.GetComponent<cameraFollow> ();
+		currentPosition = camFollow.target;
+		camFollow.enabled = false;
 		currentPosition.GetComponent<camPointer_script>().goLeft();
 	}
 
 	public void turnUp()
 	{
-		currentPosition = this.GetComponent<cameraFollow>().target;
+		var camFollow = this.GetComponent<cameraFollow> ();
+		currentPosition = camFollow.target;
+		camFollow.enabled = false;
 		currentPosition.GetComponent<camPointer_script>().goUp();
 	}
 
 	public void turnDown()
 	{
-		currentPosition = this.GetComponent<cameraFollow>().target;
+		var camFollow = this.GetComponent<cameraFollow> ();
+		currentPosition = camFollow.target;
+		camFollow.enabled = false;
 		currentPosition.GetComponent<camPointer_script>().goDown();
 	}
 
+	public void focusOnObject()
+	{
+		var cameraScript = gameObject.GetComponent<cameraFollow> ();
+		cameraScript.enabled = true;
+	}
 }
