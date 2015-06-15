@@ -16,7 +16,7 @@ public class Pillow_Animation : MonoBehaviour {
 	void StartAnimation()
 	{
 		startAnimation = true;
-		transform.collider.enabled = false;
+		transform.GetComponent<Collider>().enabled = false;
 	}
 
 	void Update()

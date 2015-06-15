@@ -27,11 +27,11 @@ public class DoorController : MonoBehaviour {
 
 		if(!locked)
 		{
-			if(gameObject.audio)
+			if(gameObject.GetComponent<AudioSource>())
 			{
-				gameObject.audio.Play();
+				gameObject.GetComponent<AudioSource>().Play();
 
-				if(gameObject.audio.isPlaying)
+				if(gameObject.GetComponent<AudioSource>().isPlaying)
 				{
 					yield return new WaitForSeconds(1);
 				}

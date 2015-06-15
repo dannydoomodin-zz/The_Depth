@@ -57,7 +57,7 @@ public class EngineRoom : MonoBehaviour {
 					{
 						currentLookingObj = hit.transform.gameObject;
 						camScript.height = Constants.camHeight[(int)Constants.clickableScenes.crate1];
-						hit.transform.collider.enabled = false;
+						hit.transform.GetComponent<Collider>().enabled = false;
 					}
 				}
 
@@ -75,7 +75,7 @@ public class EngineRoom : MonoBehaviour {
 			{
 				if(currentLookingObj.name == "crate_1_crate_1_crate_1")
 				{
-					currentLookingObj.transform.collider.enabled = true;
+					currentLookingObj.transform.GetComponent<Collider>().enabled = true;
 				}
 				
 				currentLookingObj = null;

@@ -27,7 +27,7 @@ public class TorchLightControl : MonoBehaviour {
 		if(isTorchOn)
 		{
 			//Debug.Log("torching aiming...");
-			gameObject.light.enabled = true;
+			gameObject.GetComponent<Light>().enabled = true;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 			
@@ -39,7 +39,7 @@ public class TorchLightControl : MonoBehaviour {
 		}
 		else
 		{
-			gameObject.light.enabled = false;
+			gameObject.GetComponent<Light>().enabled = false;
 		}
 	}
 }

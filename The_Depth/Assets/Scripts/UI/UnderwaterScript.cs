@@ -22,7 +22,7 @@ public class UnderwaterScript : MonoBehaviour {
 		defaultFogColor = RenderSettings.fogColor;
 		defaultFogDensity = RenderSettings.fogDensity;
 		defaultSkybox = RenderSettings.skybox;
-		camera.backgroundColor = new Color(0.06666f, 0.06666f, 0.14117647f, 1);
+		GetComponent<Camera>().backgroundColor = new Color(0.06666f, 0.06666f, 0.14117647f, 1);
 	}
 	
 	void Update () {

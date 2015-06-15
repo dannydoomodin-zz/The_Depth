@@ -13,7 +13,7 @@ public class SoundRandomLoopControl : MonoBehaviour {
 	void Update () {
 		if(delayTimeToNextPlay < 0)
 		{
-			gameObject.audio.Play();
+			gameObject.GetComponent<AudioSource>().Play();
 			delayTimeToNextPlay = Random.Range(6, 20);
 		}
 		else

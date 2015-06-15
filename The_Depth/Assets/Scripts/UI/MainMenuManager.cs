@@ -83,14 +83,14 @@ public class MainMenuManager : MonoBehaviour {
 		{
 			if(loadBtn)
 			{
-				loadBtn.collider.enabled = false;
+				loadBtn.GetComponent<Collider>().enabled = false;
 			}
 		}
 		else
 		{	
 			if(loadBtn)
 			{
-				loadBtn.collider.enabled = true;
+				loadBtn.GetComponent<Collider>().enabled = true;
 			}
 		}
 
@@ -111,14 +111,14 @@ public class MainMenuManager : MonoBehaviour {
 		{
 			if(save1Btn)
 			{
-				save1Btn.collider.enabled = false;
+				save1Btn.GetComponent<Collider>().enabled = false;
 			}
 		}
 		else
 		{
 			if(save1Btn)
 			{
-				save1Btn.collider.enabled = true;
+				save1Btn.GetComponent<Collider>().enabled = true;
 			}
 		}
 		
@@ -126,14 +126,14 @@ public class MainMenuManager : MonoBehaviour {
 		{
 			if(save2Btn)
 			{
-				save2Btn.collider.enabled = false;
+				save2Btn.GetComponent<Collider>().enabled = false;
 			}
 		} 
 		else
 		{
 			if(save2Btn)
 			{
-				save2Btn.collider.enabled = true;
+				save2Btn.GetComponent<Collider>().enabled = true;
 			}
 		}
 		
@@ -141,14 +141,14 @@ public class MainMenuManager : MonoBehaviour {
 		{
 			if(save3Btn)
 			{
-				save3Btn.collider.enabled = false;
+				save3Btn.GetComponent<Collider>().enabled = false;
 			}
 		}
 		else
 		{
 			if(save3Btn)
 			{
-				save3Btn.collider.enabled = true;
+				save3Btn.GetComponent<Collider>().enabled = true;
 			}
 		}
 
@@ -171,7 +171,7 @@ public class MainMenuManager : MonoBehaviour {
 		int buttonCount = obj.transform.childCount;
 		for(int count = 0; count < buttonCount; count++)
 		{
-			Collider c = obj.transform.GetChild(count).collider;
+			Collider c = obj.transform.GetChild(count).GetComponent<Collider>();
 			if(c)
 			{
 				c.enabled = false;
@@ -204,7 +204,7 @@ public class MainMenuManager : MonoBehaviour {
 			
 			if(loadBtn)
 			{
-				loadBtn.collider.enabled = false;
+				loadBtn.GetComponent<Collider>().enabled = false;
 			}
 		}
 	}

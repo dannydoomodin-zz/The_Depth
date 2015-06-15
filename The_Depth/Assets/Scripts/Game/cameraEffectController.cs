@@ -27,11 +27,11 @@ public class cameraEffectController : MonoBehaviour {
 			
 		if(isUsingTDevice)
 		{
-			transform.camera.SetReplacementShader(shader, null);
+			transform.GetComponent<Camera>().SetReplacementShader(shader, null);
 		}
 		else
 		{
-			transform.camera.SetReplacementShader(null, null);
+			transform.GetComponent<Camera>().SetReplacementShader(null, null);
 		}
 
 	}

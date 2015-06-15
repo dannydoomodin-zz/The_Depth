@@ -92,14 +92,14 @@ public class LightsMiniGame : MonoBehaviour {
 			startedEngine = true;
 			Debug.Log ("cells powered up.. engine is going");
 		
-			OilTankAudios[0].audio.audio.PlayDelayed(1.5f);
-			OilTankAudios[1].audio.Play();
+			OilTankAudios[0].GetComponent<AudioSource>().GetComponent<AudioSource>().PlayDelayed(1.5f);
+			OilTankAudios[1].GetComponent<AudioSource>().Play();
 
-			OilTankAudios[0].transform.parent.audio.PlayDelayed(31.5f);
-			OilTankAudios[1].transform.parent.audio.PlayDelayed(30.0f);
+			OilTankAudios[0].transform.parent.GetComponent<AudioSource>().PlayDelayed(31.5f);
+			OilTankAudios[1].transform.parent.GetComponent<AudioSource>().PlayDelayed(30.0f);
 
-			OilTankAudios[0].transform.parent.audio.playOnAwake = true;
-			OilTankAudios[1].transform.parent.audio.playOnAwake = true;
+			OilTankAudios[0].transform.parent.GetComponent<AudioSource>().playOnAwake = true;
+			OilTankAudios[1].transform.parent.GetComponent<AudioSource>().playOnAwake = true;
 			return true;
 		}
 
@@ -140,13 +140,13 @@ public class LightsMiniGame : MonoBehaviour {
 
 	void turnOn(int cellNum)
 	{
-		sphereLights[cellNum].renderer.material.color = new Color(126f/255f,231f/255f,7f/255f);
+		sphereLights[cellNum].GetComponent<Renderer>().material.color = new Color(126f/255f,231f/255f,7f/255f);
 		lights[cellNum].SetActive(true);	
 	}
 
 	void turnOff(int cellNum)
 	{
-		sphereLights[cellNum].renderer.material.color = new Color(141f/255f,17f/255f,6f/255f);
+		sphereLights[cellNum].GetComponent<Renderer>().material.color = new Color(141f/255f,17f/255f,6f/255f);
 		lights[cellNum].SetActive(false);
 	}
 }

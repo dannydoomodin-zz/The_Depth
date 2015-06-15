@@ -35,7 +35,7 @@ public class Cell : MonoBehaviour {
 		deltaX = (doorObject.transform.localPosition.x - doorOpenPosX)/4;
 		animateDoor = true;
 		
-		doorObject.collider.enabled = false;
+		doorObject.GetComponent<Collider>().enabled = false;
 	}
 
 	public void unlock(GameObject unlockObj)
@@ -54,7 +54,7 @@ public class Cell : MonoBehaviour {
 			setDoorUnlockAnimation();
 
 			//set door sound
-			unlockObj.audio.Play();
+			unlockObj.GetComponent<AudioSource>().Play();
 
 			cameraFollow camFollowScript = GameObject.Find ("Main Camera").GetComponent<cameraFollow>();
 			camPointer_script pointerScript = camFollowScript.target.GetComponent<camPointer_script>();
@@ -126,20 +126,20 @@ public class Cell : MonoBehaviour {
 					{
 						currentLookingObj = hit.transform.gameObject;
 						camScript.height = Constants.camHeight[(int)Constants.clickableScenes.toilet];
-						hit.transform.collider.enabled = false;
-						hit.transform.FindChild("toilet_top").collider.enabled = true;
+						hit.transform.GetComponent<Collider>().enabled = false;
+						hit.transform.FindChild("toilet_top").GetComponent<Collider>().enabled = true;
 					}
 					else if(hit.transform.gameObject.name == "sink")
 					{
 						currentLookingObj = hit.transform.gameObject;
 						camScript.height = Constants.camHeight[(int)Constants.clickableScenes.sink];
-						hit.transform.collider.enabled = false;
+						hit.transform.GetComponent<Collider>().enabled = false;
 					}
 					else if(hit.transform.gameObject.name == "bedBottom")
 					{
 						currentLookingObj = hit.transform.gameObject;
 						camScript.height = 0;
-						hit.transform.collider.enabled = false;
+						hit.transform.GetComponent<Collider>().enabled = false;
 						camScript.enabled = false;
 						pathScript.pathContainer = bedBottomPath;
 						setPathInfo(bedBottomPath.waypoints.Length);
@@ -217,16 +217,16 @@ public class Cell : MonoBehaviour {
 			{
 				if(currentLookingObj.name == "toilet")
 				{
-					currentLookingObj.transform.collider.enabled = true;
-					currentLookingObj.transform.FindChild("toiletTop").collider.enabled = false;
+					currentLookingObj.transform.GetComponent<Collider>().enabled = true;
+					currentLookingObj.transform.FindChild("toiletTop").GetComponent<Collider>().enabled = false;
 				}
 				else if(currentLookingObj.name == "bedBottom")
 				{
-					currentLookingObj.transform.collider.enabled = true;
+					currentLookingObj.transform.GetComponent<Collider>().enabled = true;
 				}
 				else if(currentLookingObj.name == "sink")
 				{
-					currentLookingObj.transform.collider.enabled = true;
+					currentLookingObj.transform.GetComponent<Collider>().enabled = true;
 				}
 				
 				currentLookingObj = null;
@@ -264,7 +264,7 @@ public class Cell : MonoBehaviour {
 
 		if(waterDripAudioSync <= 0)
 		{
-			waterDrip.audio.Play ();
+			waterDrip.GetComponent<AudioSource>().Play ();
 			waterDripAudioSync = 1.0f;
 		}
 		else

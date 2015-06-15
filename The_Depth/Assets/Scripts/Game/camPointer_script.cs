@@ -194,7 +194,7 @@ public class camPointer_script : MonoBehaviour {
 		//reenable collider objs
 		if(colliderObj)
 		{
-			colliderObj.collider.enabled = true;
+			colliderObj.GetComponent<Collider>().enabled = true;
 		}
 	}
 }

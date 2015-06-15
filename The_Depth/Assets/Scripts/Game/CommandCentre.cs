@@ -63,7 +63,7 @@ public class CommandCentre : MonoBehaviour {
 					if (hit.transform.gameObject.name == "panel")
 					{
 						currentLookingObj = hit.transform.gameObject;
-						hit.transform.collider.enabled = false;
+						hit.transform.GetComponent<Collider>().enabled = false;
 					}
 					else if( hit.transform.gameObject.name == "frontTop" ||
 					        hit.transform.gameObject.name == "frontBottom")
@@ -109,7 +109,7 @@ public class CommandCentre : MonoBehaviour {
 			{
 				if(currentLookingObj.name == "panel")
 				{
-					currentLookingObj.transform.collider.enabled = true;
+					currentLookingObj.transform.GetComponent<Collider>().enabled = true;
 				}
 				
 				currentLookingObj = null;
